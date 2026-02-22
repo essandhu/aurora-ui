@@ -16,7 +16,7 @@ The library is designed for open-source distribution under the `@aurora-ui` npm 
 | Framework | React 18/19 + TypeScript (strict) |
 | Styling | CSS Modules + CSS custom properties |
 | Theme | Aurora / Luminous — dark-first, ambient glows |
-| Architecture | Monorepo, individual packages (`@aurora-ui/*`) |
+| Architecture | Monorepo, individual packages (`@aurora-ui-react/*`) |
 | A11y Foundation | Radix Primitives |
 | Variant System | Prop-driven, data attribute CSS selectors |
 | Toolchain | Vite + Vitest + Storybook |
@@ -34,7 +34,7 @@ Monorepo with individual packages, managed by Turborepo and pnpm.
 ```
 aurora-ui/
 ├── packages/
-│   ├── core/                        # @aurora-ui/core
+│   ├── core/                        # @aurora-ui-react/core
 │   │   ├── src/
 │   │   │   ├── tokens/
 │   │   │   │   ├── colors.css       # 12-step color scales + aurora glow tokens
@@ -51,7 +51,7 @@ aurora-ui/
 │   │   ├── package.json
 │   │   └── tsconfig.json
 │   │
-│   ├── button/                      # @aurora-ui/button
+│   ├── button/                      # @aurora-ui-react/button
 │   │   ├── src/
 │   │   │   ├── Button.tsx
 │   │   │   ├── Button.module.css
@@ -61,22 +61,22 @@ aurora-ui/
 │   │   │   └── Button.stories.tsx
 │   │   └── package.json
 │   │
-│   ├── input/                       # @aurora-ui/input
-│   ├── select/                      # @aurora-ui/select
-│   ├── checkbox/                    # @aurora-ui/checkbox
-│   ├── radio/                       # @aurora-ui/radio
-│   ├── switch/                      # @aurora-ui/switch
-│   ├── card/                        # @aurora-ui/card
-│   ├── modal/                       # @aurora-ui/modal
-│   ├── toast/                       # @aurora-ui/toast
-│   ├── tooltip/                     # @aurora-ui/tooltip
-│   ├── badge/                       # @aurora-ui/badge
-│   ├── avatar/                      # @aurora-ui/avatar
-│   ├── tabs/                        # @aurora-ui/tabs
-│   ├── accordion/                   # @aurora-ui/accordion
-│   ├── spinner/                     # @aurora-ui/spinner
+│   ├── input/                       # @aurora-ui-react/input
+│   ├── select/                      # @aurora-ui-react/select
+│   ├── checkbox/                    # @aurora-ui-react/checkbox
+│   ├── radio/                       # @aurora-ui-react/radio
+│   ├── switch/                      # @aurora-ui-react/switch
+│   ├── card/                        # @aurora-ui-react/card
+│   ├── modal/                       # @aurora-ui-react/modal
+│   ├── toast/                       # @aurora-ui-react/toast
+│   ├── tooltip/                     # @aurora-ui-react/tooltip
+│   ├── badge/                       # @aurora-ui-react/badge
+│   ├── avatar/                      # @aurora-ui-react/avatar
+│   ├── tabs/                        # @aurora-ui-react/tabs
+│   ├── accordion/                   # @aurora-ui-react/accordion
+│   ├── spinner/                     # @aurora-ui-react/spinner
 │   │
-│   └── react/                       # @aurora-ui/react (barrel re-export)
+│   └── react/                       # @aurora-ui-react/react (barrel re-export)
 │       ├── src/index.ts
 │       └── package.json
 │
@@ -272,7 +272,7 @@ Modal.Description = Dialog.Description;
 | `disabled` | `boolean` | All interactive components |
 | `className` | `string` | All components (escape hatch) |
 
-Polymorphic `as` prop for layout components (Card, Badge) via shared `PolymorphicProps` type in `@aurora-ui/core`.
+Polymorphic `as` prop for layout components (Card, Badge) via shared `PolymorphicProps` type in `@aurora-ui-react/core`.
 
 All components use `forwardRef`.
 
@@ -326,7 +326,7 @@ Dual ESM + CJS via Vite library mode:
 
 ```json
 {
-  "name": "@aurora-ui/button",
+  "name": "@aurora-ui-react/button",
   "type": "module",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -343,21 +343,21 @@ Dual ESM + CJS via Vite library mode:
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0",
-    "@aurora-ui/core": "^0.1.0"
+    "@aurora-ui-react/core": "^0.1.0"
   }
 }
 ```
 
 ### Barrel Package
 
-`@aurora-ui/react` re-exports all components. Consumers choose:
+`@aurora-ui-react/react` re-exports all components. Consumers choose:
 
 ```tsx
 // Granular
-import { Button } from "@aurora-ui/button";
+import { Button } from "@aurora-ui-react/button";
 
 // Convenient
-import { Button, Card } from "@aurora-ui/react";
+import { Button, Card } from "@aurora-ui-react/react";
 ```
 
 ### CSS Distribution
@@ -418,7 +418,7 @@ Changesets for independent versioning per package. CI automates publishing via G
 ### Implementation Phases
 
 ```
-Phase 1: @aurora-ui/core (tokens, provider, utilities)
+Phase 1: @aurora-ui-react/core (tokens, provider, utilities)
 Phase 2: Button, Input, Badge, Spinner, Avatar, Card (parallel)
 Phase 3: Checkbox, Radio, Switch, Tooltip, Tabs, Accordion (parallel)
 Phase 4: Select, Modal, Toast (parallel)
@@ -444,7 +444,7 @@ Phase gate: all tests pass, all a11y checks pass, all stories render.
 
 | Element | Convention | Example |
 |---|---|---|
-| Packages | `@aurora-ui/kebab-case` | `@aurora-ui/button` |
+| Packages | `@aurora-ui-react/kebab-case` | `@aurora-ui-react/button` |
 | Component files | `PascalCase.tsx` | `Button.tsx` |
 | CSS Modules | `PascalCase.module.css` | `Button.module.css` |
 | CSS properties | `--au-` prefix | `--au-accent` |
@@ -475,7 +475,7 @@ Phase gate: all tests pass, all a11y checks pass, all stories render.
 | Metric | Target |
 |---|---|
 | Bundle per component | < 5KB gzipped |
-| Total bundle (`@aurora-ui/react`) | < 50KB gzipped |
+| Total bundle (`@aurora-ui-react/react`) | < 50KB gzipped |
 | Animation performance | 60fps (compositor-only properties) |
 | CLS | 0 |
 

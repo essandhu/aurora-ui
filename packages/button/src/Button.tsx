@@ -1,7 +1,7 @@
 import { forwardRef, type ButtonHTMLAttributes } from "react";
-import { cn } from "@aurora-ui/core";
-import type { Size, Accent } from "@aurora-ui/core";
-import { Spinner } from "@aurora-ui/spinner";
+import { cn } from "@aurora-ui-react/core";
+import type { Size, Accent } from "@aurora-ui-react/core";
+import { Spinner } from "@aurora-ui-react/spinner";
 import styles from "./Button.module.css";
 
 type ButtonVariant = "solid" | "outline" | "ghost" | "glow";

@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
-import { cn } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
 import styles from "./Tabs.module.css";
 
 export interface TabsProps extends TabsPrimitive.TabsProps {}

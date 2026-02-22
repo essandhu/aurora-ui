@@ -4,7 +4,7 @@
 
 **Goal:** Build a React component library with a luminous, dark-first Aurora theme — 15 accessible components distributed as individual npm packages.
 
-**Architecture:** Turborepo monorepo with pnpm workspaces. Each component is an independent package (`@aurora-ui/*`) with CSS Modules for styling, data attributes for variants, and Radix Primitives for accessibility. All development follows strict TDD.
+**Architecture:** Turborepo monorepo with pnpm workspaces. Each component is an independent package (`@aurora-ui-react/*`) with CSS Modules for styling, data attributes for variants, and Radix Primitives for accessibility. All development follows strict TDD.
 
 **Tech Stack:** React 18/19, TypeScript (strict), Vite (library mode), Vitest, React Testing Library, vitest-axe, Storybook, Radix Primitives, CSS Modules, Turborepo, pnpm, Changesets.
 
@@ -12,7 +12,7 @@
 
 ---
 
-## Phase 1: Foundation — Monorepo Infrastructure & @aurora-ui/core
+## Phase 1: Foundation — Monorepo Infrastructure & @aurora-ui-react/core
 
 ### Task 1.1: Initialize Monorepo
 
@@ -159,7 +159,7 @@ git commit -m "chore: initialize monorepo with turborepo and pnpm"
 
 ---
 
-### Task 1.2: Create @aurora-ui/core Package — Scaffold
+### Task 1.2: Create @aurora-ui-react/core Package — Scaffold
 
 **Files:**
 - Create: `packages/core/package.json`
@@ -175,7 +175,7 @@ mkdir -p packages/core/src
 
 ```json
 {
-  "name": "@aurora-ui/core",
+  "name": "@aurora-ui-react/core",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -275,7 +275,7 @@ import "@testing-library/jest-dom/vitest";
 **Step 5: Create placeholder index.ts**
 
 ```ts
-// @aurora-ui/core — foundation package
+// @aurora-ui-react/core — foundation package
 export {};
 ```
 
@@ -295,7 +295,7 @@ pnpm build
 
 ```bash
 git add -A
-git commit -m "chore(core): scaffold @aurora-ui/core package"
+git commit -m "chore(core): scaffold @aurora-ui-react/core package"
 ```
 
 ---
@@ -1001,7 +1001,7 @@ Create `packages/spinner/package.json`:
 
 ```json
 {
-  "name": "@aurora-ui/spinner",
+  "name": "@aurora-ui-react/spinner",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -1027,14 +1027,14 @@ Create `packages/spinner/package.json`:
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0",
-    "@aurora-ui/core": "workspace:*"
+    "@aurora-ui-react/core": "workspace:*"
   },
   "devDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@aurora-ui/core": "workspace:*",
+    "@aurora-ui-react/core": "workspace:*",
     "vite": "^6.1.0",
     "vitest": "^3.0.0",
     "@vitejs/plugin-react": "^4.3.0",
@@ -1056,7 +1056,7 @@ Create `packages/spinner/tsconfig.json`:
 }
 ```
 
-Create `packages/spinner/vite.config.ts` (same pattern as core but with entry `src/index.ts` and external `["react", "react-dom", "react/jsx-runtime", "@aurora-ui/core"]`):
+Create `packages/spinner/vite.config.ts` (same pattern as core but with entry `src/index.ts` and external `["react", "react-dom", "react/jsx-runtime", "@aurora-ui-react/core"]`):
 
 ```ts
 import { defineConfig } from "vite";
@@ -1072,7 +1072,7 @@ export default defineConfig({
       fileName: (format) => `${format === "es" ? "esm" : "cjs"}/index.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime", "@aurora-ui/core"],
+      external: ["react", "react-dom", "react/jsx-runtime", "@aurora-ui-react/core"],
     },
   },
   test: {
@@ -1198,8 +1198,8 @@ Expected: FAIL.
 ```tsx
 // packages/spinner/src/Spinner.tsx
 import { forwardRef } from "react";
-import { cn } from "@aurora-ui/core";
-import type { Size } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
+import type { Size } from "@aurora-ui-react/core";
 import styles from "./Spinner.module.css";
 
 type SpinnerVariant = "ring" | "dots" | "pulse";
@@ -1343,7 +1343,7 @@ git commit -m "feat(spinner): add Spinner component with ring, dots, pulse varia
 ### Task 2.2: Button Component
 
 **Files:**
-- Create: `packages/button/package.json` (same pattern as spinner, add `@aurora-ui/spinner` to peerDeps)
+- Create: `packages/button/package.json` (same pattern as spinner, add `@aurora-ui-react/spinner` to peerDeps)
 - Create: `packages/button/tsconfig.json`
 - Create: `packages/button/vite.config.ts`
 - Create: `packages/button/src/test-setup.ts`
@@ -1358,17 +1358,17 @@ Same structure as spinner. `package.json` adds:
 
 ```json
 {
-  "name": "@aurora-ui/button",
+  "name": "@aurora-ui-react/button",
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0",
-    "@aurora-ui/core": "workspace:*",
-    "@aurora-ui/spinner": "workspace:*"
+    "@aurora-ui-react/core": "workspace:*",
+    "@aurora-ui-react/spinner": "workspace:*"
   }
 }
 ```
 
-External in vite.config.ts: `["react", "react-dom", "react/jsx-runtime", "@aurora-ui/core", "@aurora-ui/spinner"]`
+External in vite.config.ts: `["react", "react-dom", "react/jsx-runtime", "@aurora-ui-react/core", "@aurora-ui-react/spinner"]`
 
 **Step 2: Write the failing tests**
 
@@ -1523,9 +1523,9 @@ cd packages/button && pnpm install && pnpm vitest run src/Button.test.tsx
 ```tsx
 // packages/button/src/Button.tsx
 import { forwardRef, type ButtonHTMLAttributes } from "react";
-import { cn } from "@aurora-ui/core";
-import type { Size, Accent } from "@aurora-ui/core";
-import { Spinner } from "@aurora-ui/spinner";
+import { cn } from "@aurora-ui-react/core";
+import type { Size, Accent } from "@aurora-ui-react/core";
+import { Spinner } from "@aurora-ui-react/spinner";
 import styles from "./Button.module.css";
 
 type ButtonVariant = "solid" | "outline" | "ghost" | "glow";
@@ -1723,7 +1723,7 @@ git commit -m "feat(button): add Button with solid, outline, ghost, glow variant
 
 **Files:** Same 4-file pattern in `packages/badge/`
 
-**Step 1: Scaffold package** (same pattern, name `@aurora-ui/badge`, peerDep on `@aurora-ui/core`)
+**Step 1: Scaffold package** (same pattern, name `@aurora-ui-react/badge`, peerDep on `@aurora-ui-react/core`)
 
 **Step 2: Write failing tests**
 
@@ -1794,8 +1794,8 @@ describe("Badge", () => {
 ```tsx
 // packages/badge/src/Badge.tsx
 import { forwardRef, type HTMLAttributes } from "react";
-import { cn } from "@aurora-ui/core";
-import type { Size, Accent } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
+import type { Size, Accent } from "@aurora-ui-react/core";
 import styles from "./Badge.module.css";
 
 type BadgeVariant = "solid" | "outline" | "glow";
@@ -1956,8 +1956,8 @@ describe("Avatar", () => {
 ```tsx
 // packages/avatar/src/Avatar.tsx
 import { forwardRef } from "react";
-import { cn } from "@aurora-ui/core";
-import type { Size } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
+import type { Size } from "@aurora-ui-react/core";
 import styles from "./Avatar.module.css";
 
 type AvatarVariant = "circle" | "square";
@@ -2120,7 +2120,7 @@ describe("Card", () => {
 ```tsx
 // packages/card/src/Card.tsx
 import { forwardRef, type ElementType, type HTMLAttributes } from "react";
-import { cn } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
 import styles from "./Card.module.css";
 
 type CardVariant = "surface" | "elevated" | "glass";
@@ -2300,8 +2300,8 @@ describe("Input", () => {
 ```tsx
 // packages/input/src/Input.tsx
 import { forwardRef, type InputHTMLAttributes } from "react";
-import { cn } from "@aurora-ui/core";
-import type { Size } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
+import type { Size } from "@aurora-ui-react/core";
 import styles from "./Input.module.css";
 
 type InputVariant = "outline" | "filled" | "ghost";
@@ -2527,8 +2527,8 @@ describe("Checkbox", () => {
 // packages/checkbox/src/Checkbox.tsx
 import { forwardRef } from "react";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
-import { cn } from "@aurora-ui/core";
-import type { Size } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
+import type { Size } from "@aurora-ui-react/core";
 import styles from "./Checkbox.module.css";
 
 export interface CheckboxProps
@@ -2734,7 +2734,7 @@ git commit -m "chore: phase 4 complete — all complex composite components veri
 
 ## Phase 5: Barrel Package, Storybook & Polish
 
-### Task 5.1: Barrel Package (@aurora-ui/react)
+### Task 5.1: Barrel Package (@aurora-ui-react/react)
 
 **Files:**
 - Create: `packages/react/package.json`
@@ -2745,7 +2745,7 @@ git commit -m "chore: phase 4 complete — all complex composite components veri
 
 ```json
 {
-  "name": "@aurora-ui/react",
+  "name": "@aurora-ui-react/react",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -2766,22 +2766,22 @@ git commit -m "chore: phase 4 complete — all complex composite components veri
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@aurora-ui/core": "workspace:*",
-    "@aurora-ui/button": "workspace:*",
-    "@aurora-ui/input": "workspace:*",
-    "@aurora-ui/select": "workspace:*",
-    "@aurora-ui/checkbox": "workspace:*",
-    "@aurora-ui/radio": "workspace:*",
-    "@aurora-ui/switch": "workspace:*",
-    "@aurora-ui/card": "workspace:*",
-    "@aurora-ui/modal": "workspace:*",
-    "@aurora-ui/toast": "workspace:*",
-    "@aurora-ui/tooltip": "workspace:*",
-    "@aurora-ui/badge": "workspace:*",
-    "@aurora-ui/avatar": "workspace:*",
-    "@aurora-ui/tabs": "workspace:*",
-    "@aurora-ui/accordion": "workspace:*",
-    "@aurora-ui/spinner": "workspace:*"
+    "@aurora-ui-react/core": "workspace:*",
+    "@aurora-ui-react/button": "workspace:*",
+    "@aurora-ui-react/input": "workspace:*",
+    "@aurora-ui-react/select": "workspace:*",
+    "@aurora-ui-react/checkbox": "workspace:*",
+    "@aurora-ui-react/radio": "workspace:*",
+    "@aurora-ui-react/switch": "workspace:*",
+    "@aurora-ui-react/card": "workspace:*",
+    "@aurora-ui-react/modal": "workspace:*",
+    "@aurora-ui-react/toast": "workspace:*",
+    "@aurora-ui-react/tooltip": "workspace:*",
+    "@aurora-ui-react/badge": "workspace:*",
+    "@aurora-ui-react/avatar": "workspace:*",
+    "@aurora-ui-react/tabs": "workspace:*",
+    "@aurora-ui-react/accordion": "workspace:*",
+    "@aurora-ui-react/spinner": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
@@ -2795,47 +2795,47 @@ git commit -m "chore: phase 4 complete — all complex composite components veri
 ```ts
 // packages/react/src/index.ts
 // Core
-export { AuroraProvider } from "@aurora-ui/core";
-export { cn } from "@aurora-ui/core";
-export type { Size, Accent, Radius, AuroraProviderProps } from "@aurora-ui/core";
+export { AuroraProvider } from "@aurora-ui-react/core";
+export { cn } from "@aurora-ui-react/core";
+export type { Size, Accent, Radius, AuroraProviderProps } from "@aurora-ui-react/core";
 
 // Components
-export { Button } from "@aurora-ui/button";
-export type { ButtonProps } from "@aurora-ui/button";
+export { Button } from "@aurora-ui-react/button";
+export type { ButtonProps } from "@aurora-ui-react/button";
 
-export { Input } from "@aurora-ui/input";
-export type { InputProps } from "@aurora-ui/input";
+export { Input } from "@aurora-ui-react/input";
+export type { InputProps } from "@aurora-ui-react/input";
 
-export { Select } from "@aurora-ui/select";
+export { Select } from "@aurora-ui-react/select";
 
-export { Checkbox } from "@aurora-ui/checkbox";
-export type { CheckboxProps } from "@aurora-ui/checkbox";
+export { Checkbox } from "@aurora-ui-react/checkbox";
+export type { CheckboxProps } from "@aurora-ui-react/checkbox";
 
-export { Radio, RadioGroup } from "@aurora-ui/radio";
+export { Radio, RadioGroup } from "@aurora-ui-react/radio";
 
-export { Switch } from "@aurora-ui/switch";
+export { Switch } from "@aurora-ui-react/switch";
 
-export { Card } from "@aurora-ui/card";
-export type { CardProps } from "@aurora-ui/card";
+export { Card } from "@aurora-ui-react/card";
+export type { CardProps } from "@aurora-ui-react/card";
 
-export { Modal } from "@aurora-ui/modal";
+export { Modal } from "@aurora-ui-react/modal";
 
-export { Toast, ToastProvider } from "@aurora-ui/toast";
+export { Toast, ToastProvider } from "@aurora-ui-react/toast";
 
-export { Tooltip } from "@aurora-ui/tooltip";
+export { Tooltip } from "@aurora-ui-react/tooltip";
 
-export { Badge } from "@aurora-ui/badge";
-export type { BadgeProps } from "@aurora-ui/badge";
+export { Badge } from "@aurora-ui-react/badge";
+export type { BadgeProps } from "@aurora-ui-react/badge";
 
-export { Avatar } from "@aurora-ui/avatar";
-export type { AvatarProps } from "@aurora-ui/avatar";
+export { Avatar } from "@aurora-ui-react/avatar";
+export type { AvatarProps } from "@aurora-ui-react/avatar";
 
-export { Tabs } from "@aurora-ui/tabs";
+export { Tabs } from "@aurora-ui-react/tabs";
 
-export { Accordion } from "@aurora-ui/accordion";
+export { Accordion } from "@aurora-ui-react/accordion";
 
-export { Spinner } from "@aurora-ui/spinner";
-export type { SpinnerProps } from "@aurora-ui/spinner";
+export { Spinner } from "@aurora-ui-react/spinner";
+export type { SpinnerProps } from "@aurora-ui-react/spinner";
 ```
 
 **Step 3: Build and verify**
@@ -2864,7 +2864,7 @@ git commit -m "feat(react): add barrel package re-exporting all components"
 
 ```json
 {
-  "name": "@aurora-ui/storybook",
+  "name": "@aurora-ui-react/storybook",
   "private": true,
   "scripts": {
     "dev": "storybook dev -p 6006",
@@ -2878,7 +2878,7 @@ git commit -m "feat(react): add barrel package re-exporting all components"
     "@storybook/addon-a11y": "^8.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@aurora-ui/react": "workspace:*"
+    "@aurora-ui-react/react": "workspace:*"
   }
 }
 ```
@@ -2909,7 +2909,7 @@ export default config;
 ```ts
 // apps/storybook/.storybook/preview.ts
 import type { Preview } from "@storybook/react";
-import { AuroraProvider } from "@aurora-ui/core";
+import { AuroraProvider } from "@aurora-ui-react/core";
 import React from "react";
 
 const preview: Preview = {

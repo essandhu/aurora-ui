@@ -1,5 +1,5 @@
 import { forwardRef, type ElementType, type HTMLAttributes } from "react";
-import { cn } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
 import styles from "./Card.module.css";
 
 type CardVariant = "surface" | "elevated" | "glass";

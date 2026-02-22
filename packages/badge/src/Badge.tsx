@@ -1,6 +1,6 @@
 import { forwardRef, type HTMLAttributes } from "react";
-import { cn } from "@aurora-ui/core";
-import type { Size, Accent } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
+import type { Size, Accent } from "@aurora-ui-react/core";
 import styles from "./Badge.module.css";
 
 type BadgeVariant = "solid" | "outline" | "glow";

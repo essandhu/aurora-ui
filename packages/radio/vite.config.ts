@@ -11,7 +11,7 @@ export default defineConfig({
       fileName: (format) => `${format === "es" ? "esm" : "cjs"}/index.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime", "@aurora-ui/core", "@radix-ui/react-radio-group"],
+      external: ["react", "react-dom", "react/jsx-runtime", "@aurora-ui-react/core", "@radix-ui/react-radio-group"],
     },
   },
   test: {

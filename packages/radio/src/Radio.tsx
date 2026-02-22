@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
-import { cn } from "@aurora-ui/core";
-import type { Size } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
+import type { Size } from "@aurora-ui-react/core";
 import styles from "./Radio.module.css";
 
 export interface RadioGroupProps extends RadioGroupPrimitive.RadioGroupProps {

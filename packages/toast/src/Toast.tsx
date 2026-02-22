@@ -1,6 +1,6 @@
 import { forwardRef, type ComponentPropsWithoutRef } from "react";
 import * as ToastPrimitive from "@radix-ui/react-toast";
-import { cn } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
 import styles from "./Toast.module.css";
 
 type Severity = "info" | "success" | "warning" | "error";
