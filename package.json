@@ -18,5 +18,8 @@
     "turbo": "^2.4.0",
     "@changesets/cli": "^2.29.0",
     "typescript": "^5.7.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
   }
 }
