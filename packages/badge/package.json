@@ -1,5 +1,5 @@
 {
-  "name": "@aurora-ui/badge",
+  "name": "@aurora-ui-react/badge",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -25,14 +25,14 @@
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0",
-    "@aurora-ui/core": "workspace:*"
+    "@aurora-ui-react/core": "workspace:*"
   },
   "devDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@aurora-ui/core": "workspace:*",
+    "@aurora-ui-react/core": "workspace:*",
     "vite": "^6.1.0",
     "vitest": "^3.0.0",
     "@vitejs/plugin-react": "^4.3.0",

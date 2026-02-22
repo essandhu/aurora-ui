@@ -1,6 +1,6 @@
 import { forwardRef, type ComponentPropsWithoutRef } from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { cn } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
 import styles from "./Select.module.css";
 
 export interface SelectProps extends SelectPrimitive.SelectProps {}

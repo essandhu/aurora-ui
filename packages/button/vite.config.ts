@@ -11,7 +11,7 @@ export default defineConfig({
       fileName: (format) => `${format === "es" ? "esm" : "cjs"}/index.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime", "@aurora-ui/core", "@aurora-ui/spinner"],
+      external: ["react", "react-dom", "react/jsx-runtime", "@aurora-ui-react/core", "@aurora-ui-react/spinner"],
     },
   },
   test: {

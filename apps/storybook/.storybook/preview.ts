@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react";
-import { AuroraProvider } from "@aurora-ui/react";
+import { AuroraProvider } from "@aurora-ui-react/react";
 import React from "react";
 
 const preview: Preview = {

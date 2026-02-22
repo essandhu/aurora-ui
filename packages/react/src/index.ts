@@ -1,5 +1,5 @@
 // Core
-export { AuroraProvider, cn } from "@aurora-ui/core";
+export { AuroraProvider, cn } from "@aurora-ui-react/core";
 export type {
   Size,
   Accent,
@@ -7,18 +7,18 @@ export type {
   AuroraProviderProps,
   AuroraComponentProps,
   PolymorphicProps,
-} from "@aurora-ui/core";
+} from "@aurora-ui-react/core";
 
 // Button
-export { Button } from "@aurora-ui/button";
-export type { ButtonProps } from "@aurora-ui/button";
+export { Button } from "@aurora-ui-react/button";
+export type { ButtonProps } from "@aurora-ui-react/button";
 
 // Input
-export { Input } from "@aurora-ui/input";
-export type { InputProps } from "@aurora-ui/input";
+export { Input } from "@aurora-ui-react/input";
+export type { InputProps } from "@aurora-ui-react/input";
 
 // Select
-export { Select } from "@aurora-ui/select";
+export { Select } from "@aurora-ui-react/select";
 export type {
   SelectProps,
   SelectTriggerProps,
@@ -26,36 +26,36 @@ export type {
   SelectItemProps,
   SelectGroupProps,
   SelectLabelProps,
-} from "@aurora-ui/select";
+} from "@aurora-ui-react/select";
 
 // Checkbox
-export { Checkbox } from "@aurora-ui/checkbox";
-export type { CheckboxProps } from "@aurora-ui/checkbox";
+export { Checkbox } from "@aurora-ui-react/checkbox";
+export type { CheckboxProps } from "@aurora-ui-react/checkbox";
 
 // Radio
-export { RadioGroup, RadioItem } from "@aurora-ui/radio";
-export type { RadioGroupProps, RadioItemProps } from "@aurora-ui/radio";
+export { RadioGroup, RadioItem } from "@aurora-ui-react/radio";
+export type { RadioGroupProps, RadioItemProps } from "@aurora-ui-react/radio";
 
 // Switch
-export { Switch } from "@aurora-ui/switch";
-export type { SwitchProps } from "@aurora-ui/switch";
+export { Switch } from "@aurora-ui-react/switch";
+export type { SwitchProps } from "@aurora-ui-react/switch";
 
 // Card
-export { Card } from "@aurora-ui/card";
-export type { CardProps } from "@aurora-ui/card";
+export { Card } from "@aurora-ui-react/card";
+export type { CardProps } from "@aurora-ui-react/card";
 
 // Modal
-export { Modal } from "@aurora-ui/modal";
+export { Modal } from "@aurora-ui-react/modal";
 export type {
   ModalProps,
   ModalContentProps,
   ModalTitleProps,
   ModalDescriptionProps,
   ModalCloseProps,
-} from "@aurora-ui/modal";
+} from "@aurora-ui-react/modal";
 
 // Toast
-export { Toast, ToastProvider } from "@aurora-ui/toast";
+export { Toast, ToastProvider } from "@aurora-ui-react/toast";
 export type {
   ToastProps,
   ToastProviderProps,
@@ -63,38 +63,38 @@ export type {
   ToastDescriptionProps,
   ToastActionProps,
   ToastCloseProps,
-} from "@aurora-ui/toast";
+} from "@aurora-ui-react/toast";
 
 // Tooltip
-export { Tooltip } from "@aurora-ui/tooltip";
-export type { TooltipProps, TooltipContentProps } from "@aurora-ui/tooltip";
+export { Tooltip } from "@aurora-ui-react/tooltip";
+export type { TooltipProps, TooltipContentProps } from "@aurora-ui-react/tooltip";
 
 // Badge
-export { Badge } from "@aurora-ui/badge";
-export type { BadgeProps } from "@aurora-ui/badge";
+export { Badge } from "@aurora-ui-react/badge";
+export type { BadgeProps } from "@aurora-ui-react/badge";
 
 // Avatar
-export { Avatar } from "@aurora-ui/avatar";
-export type { AvatarProps } from "@aurora-ui/avatar";
+export { Avatar } from "@aurora-ui-react/avatar";
+export type { AvatarProps } from "@aurora-ui-react/avatar";
 
 // Tabs
-export { Tabs } from "@aurora-ui/tabs";
+export { Tabs } from "@aurora-ui-react/tabs";
 export type {
   TabsProps,
   TabsListProps,
   TabsTriggerProps,
   TabsContentProps,
-} from "@aurora-ui/tabs";
+} from "@aurora-ui-react/tabs";
 
 // Accordion
-export { Accordion } from "@aurora-ui/accordion";
+export { Accordion } from "@aurora-ui-react/accordion";
 export type {
   AccordionProps,
   AccordionItemProps,
   AccordionTriggerProps,
   AccordionContentProps,
-} from "@aurora-ui/accordion";
+} from "@aurora-ui-react/accordion";
 
 // Spinner
-export { Spinner } from "@aurora-ui/spinner";
-export type { SpinnerProps } from "@aurora-ui/spinner";
+export { Spinner } from "@aurora-ui-react/spinner";
+export type { SpinnerProps } from "@aurora-ui-react/spinner";

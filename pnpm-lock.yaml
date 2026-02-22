@@ -47,55 +47,55 @@ importers:
 
   apps/storybook:
     devDependencies:
-      '@aurora-ui/accordion':
+      '@aurora-ui-react/accordion':
         specifier: workspace:*
         version: link:../../packages/accordion
-      '@aurora-ui/avatar':
+      '@aurora-ui-react/avatar':
         specifier: workspace:*
         version: link:../../packages/avatar
-      '@aurora-ui/badge':
+      '@aurora-ui-react/badge':
         specifier: workspace:*
         version: link:../../packages/badge
-      '@aurora-ui/button':
+      '@aurora-ui-react/button':
         specifier: workspace:*
         version: link:../../packages/button
-      '@aurora-ui/card':
+      '@aurora-ui-react/card':
         specifier: workspace:*
         version: link:../../packages/card
-      '@aurora-ui/checkbox':
+      '@aurora-ui-react/checkbox':
         specifier: workspace:*
         version: link:../../packages/checkbox
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@aurora-ui/input':
+      '@aurora-ui-react/input':
         specifier: workspace:*
         version: link:../../packages/input
-      '@aurora-ui/modal':
+      '@aurora-ui-react/modal':
         specifier: workspace:*
         version: link:../../packages/modal
-      '@aurora-ui/radio':
+      '@aurora-ui-react/radio':
         specifier: workspace:*
         version: link:../../packages/radio
-      '@aurora-ui/react':
+      '@aurora-ui-react/react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@aurora-ui/select':
+      '@aurora-ui-react/select':
         specifier: workspace:*
         version: link:../../packages/select
-      '@aurora-ui/spinner':
+      '@aurora-ui-react/spinner':
         specifier: workspace:*
         version: link:../../packages/spinner
-      '@aurora-ui/switch':
+      '@aurora-ui-react/switch':
         specifier: workspace:*
         version: link:../../packages/switch
-      '@aurora-ui/tabs':
+      '@aurora-ui-react/tabs':
         specifier: workspace:*
         version: link:../../packages/tabs
-      '@aurora-ui/toast':
+      '@aurora-ui-react/toast':
         specifier: workspace:*
         version: link:../../packages/toast
-      '@aurora-ui/tooltip':
+      '@aurora-ui-react/tooltip':
         specifier: workspace:*
         version: link:../../packages/tooltip
       '@storybook/addon-a11y':
@@ -126,7 +126,7 @@ importers:
         specifier: ^1.2.0
         version: 1.2.12(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -168,7 +168,7 @@ importers:
 
   packages/avatar:
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -207,7 +207,7 @@ importers:
 
   packages/badge:
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -246,10 +246,10 @@ importers:
 
   packages/button:
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
-      '@aurora-ui/spinner':
+      '@aurora-ui-react/spinner':
         specifier: workspace:*
         version: link:../spinner
       '@testing-library/jest-dom':
@@ -291,7 +291,7 @@ importers:
 
   packages/card:
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -334,7 +334,7 @@ importers:
         specifier: ^1.1.0
         version: 1.3.3(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -413,7 +413,7 @@ importers:
 
   packages/input:
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -459,7 +459,7 @@ importers:
         specifier: ^1.1.0
         version: 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -505,7 +505,7 @@ importers:
         specifier: ^1.2.0
         version: 1.3.8(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -547,52 +547,52 @@ importers:
 
   packages/react:
     dependencies:
-      '@aurora-ui/accordion':
+      '@aurora-ui-react/accordion':
         specifier: workspace:*
         version: link:../accordion
-      '@aurora-ui/avatar':
+      '@aurora-ui-react/avatar':
         specifier: workspace:*
         version: link:../avatar
-      '@aurora-ui/badge':
+      '@aurora-ui-react/badge':
         specifier: workspace:*
         version: link:../badge
-      '@aurora-ui/button':
+      '@aurora-ui-react/button':
         specifier: workspace:*
         version: link:../button
-      '@aurora-ui/card':
+      '@aurora-ui-react/card':
         specifier: workspace:*
         version: link:../card
-      '@aurora-ui/checkbox':
+      '@aurora-ui-react/checkbox':
         specifier: workspace:*
         version: link:../checkbox
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
-      '@aurora-ui/input':
+      '@aurora-ui-react/input':
         specifier: workspace:*
         version: link:../input
-      '@aurora-ui/modal':
+      '@aurora-ui-react/modal':
         specifier: workspace:*
         version: link:../modal
-      '@aurora-ui/radio':
+      '@aurora-ui-react/radio':
         specifier: workspace:*
         version: link:../radio
-      '@aurora-ui/select':
+      '@aurora-ui-react/select':
         specifier: workspace:*
         version: link:../select
-      '@aurora-ui/spinner':
+      '@aurora-ui-react/spinner':
         specifier: workspace:*
         version: link:../spinner
-      '@aurora-ui/switch':
+      '@aurora-ui-react/switch':
         specifier: workspace:*
         version: link:../switch
-      '@aurora-ui/tabs':
+      '@aurora-ui-react/tabs':
         specifier: workspace:*
         version: link:../tabs
-      '@aurora-ui/toast':
+      '@aurora-ui-react/toast':
         specifier: workspace:*
         version: link:../toast
-      '@aurora-ui/tooltip':
+      '@aurora-ui-react/tooltip':
         specifier: workspace:*
         version: link:../tooltip
     devDependencies:
@@ -624,7 +624,7 @@ importers:
         specifier: ^2.1.0
         version: 2.2.6(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -666,7 +666,7 @@ importers:
 
   packages/spinner:
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -709,7 +709,7 @@ importers:
         specifier: ^1.1.0
         version: 1.2.6(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -755,7 +755,7 @@ importers:
         specifier: ^1.1.0
         version: 1.1.13(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -801,7 +801,7 @@ importers:
         specifier: ^1.2.0
         version: 1.2.15(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':
@@ -847,7 +847,7 @@ importers:
         specifier: ^1.1.0
         version: 1.2.8(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
-      '@aurora-ui/core':
+      '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
       '@testing-library/jest-dom':

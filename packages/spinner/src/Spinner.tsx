@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
-import { cn } from "@aurora-ui/core";
-import type { Size } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
+import type { Size } from "@aurora-ui-react/core";
 import styles from "./Spinner.module.css";
 
 type SpinnerVariant = "ring" | "dots" | "pulse";

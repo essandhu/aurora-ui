@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { cn } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
 import styles from "./Accordion.module.css";
 
 export type AccordionProps = React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root> & {

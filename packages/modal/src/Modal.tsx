@@ -1,7 +1,7 @@
 import { forwardRef, type ComponentPropsWithoutRef } from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { cn } from "@aurora-ui/core";
-import type { Size } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
+import type { Size } from "@aurora-ui-react/core";
 import styles from "./Modal.module.css";
 
 export interface ModalProps extends DialogPrimitive.DialogProps {}

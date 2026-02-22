@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
-import { cn } from "@aurora-ui/core";
-import type { Size } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
+import type { Size } from "@aurora-ui-react/core";
 import styles from "./Switch.module.css";
 
 export interface SwitchProps

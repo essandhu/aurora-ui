@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
-import { cn } from "@aurora-ui/core";
-import type { Size } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
+import type { Size } from "@aurora-ui-react/core";
 import styles from "./Checkbox.module.css";
 
 export interface CheckboxProps

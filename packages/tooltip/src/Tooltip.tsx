@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import { cn } from "@aurora-ui/core";
+import { cn } from "@aurora-ui-react/core";
 import styles from "./Tooltip.module.css";
 
 export interface TooltipProps extends TooltipPrimitive.TooltipProps {}

@@ -34,7 +34,7 @@ jobs:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
-      - run: pnpm --filter @aurora-ui/storybook build
+      - run: pnpm --filter @aurora-ui-react/storybook build
 
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,5 +1,5 @@
 {
-  "name": "@aurora-ui/core",
+  "name": "@aurora-ui-react/core",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/cjs/index.js",
