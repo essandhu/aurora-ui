@@ -1,0 +1,21 @@
+:root, [data-aurora-theme] {
+  --au-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --au-font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+
+  --au-text-xs: 12px;
+  --au-text-sm: 13px;
+  --au-text-md: 14px;
+  --au-text-lg: 16px;
+  --au-text-xl: 18px;
+  --au-text-2xl: 24px;
+  --au-text-3xl: 32px;
+
+  --au-leading-tight: 1.25;
+  --au-leading-normal: 1.5;
+  --au-leading-relaxed: 1.75;
+
+  --au-weight-normal: 400;
+  --au-weight-medium: 500;
+  --au-weight-semibold: 600;
+  --au-weight-bold: 700;
+}

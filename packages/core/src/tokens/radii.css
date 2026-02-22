@@ -1,0 +1,12 @@
+:root, [data-aurora-theme] {
+  --au-radius-none: 0px;
+  --au-radius-sm: 4px;
+  --au-radius-md: 8px;
+  --au-radius-lg: 12px;
+  --au-radius-full: 9999px;
+}
+
+[data-aurora-radius="none"] { --au-radius-default: var(--au-radius-none); }
+[data-aurora-radius="small"] { --au-radius-default: var(--au-radius-sm); }
+[data-aurora-radius="medium"] { --au-radius-default: var(--au-radius-md); }
+[data-aurora-radius="large"] { --au-radius-default: var(--au-radius-lg); }

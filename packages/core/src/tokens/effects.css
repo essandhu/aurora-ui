@@ -1,0 +1,32 @@
+:root, [data-aurora-theme] {
+  /* Glow sizes */
+  --au-glow-sm: 0 0 8px;
+  --au-glow-md: 0 0 16px;
+  --au-glow-lg: 0 0 32px;
+
+  /* Surface effects */
+  --au-blur-surface: 12px;
+
+  /* Transitions */
+  --au-transition-glow: 200ms ease-out;
+  --au-transition-luminance: 150ms ease-out;
+  --au-transition-base: 150ms ease;
+
+  /* Shadows (for light mode) */
+  --au-shadow-sm: 0 1px 2px hsl(260, 20%, 8%, 0.05);
+  --au-shadow-md: 0 4px 12px hsl(260, 20%, 8%, 0.1);
+  --au-shadow-lg: 0 8px 24px hsl(260, 20%, 8%, 0.15);
+
+  /* Focus ring */
+  --au-ring-width: 2px;
+  --au-ring-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root, [data-aurora-theme] {
+    --au-transition-glow: 0ms;
+    --au-transition-luminance: 0ms;
+    --au-transition-base: 0ms;
+  }
+}

@@ -1,0 +1,159 @@
+/* --- Primitive Color Scales --- */
+
+/* Violet (base surface palette) */
+:root, [data-aurora-theme] {
+  --au-violet-1: hsl(260, 20%, 8%);
+  --au-violet-2: hsl(260, 22%, 11%);
+  --au-violet-3: hsl(260, 24%, 15%);
+  --au-violet-4: hsl(260, 25%, 19%);
+  --au-violet-5: hsl(260, 26%, 23%);
+  --au-violet-6: hsl(260, 20%, 32%);
+  --au-violet-7: hsl(260, 18%, 42%);
+  --au-violet-8: hsl(260, 16%, 52%);
+  --au-violet-9: hsl(260, 60%, 58%);
+  --au-violet-10: hsl(260, 65%, 65%);
+  --au-violet-11: hsl(260, 50%, 75%);
+  --au-violet-12: hsl(260, 95%, 92%);
+
+  /* Cyan (default accent) */
+  --au-cyan-1: hsl(190, 60%, 6%);
+  --au-cyan-2: hsl(190, 55%, 10%);
+  --au-cyan-3: hsl(190, 50%, 15%);
+  --au-cyan-4: hsl(190, 50%, 20%);
+  --au-cyan-5: hsl(190, 50%, 26%);
+  --au-cyan-6: hsl(190, 45%, 35%);
+  --au-cyan-7: hsl(190, 65%, 42%);
+  --au-cyan-8: hsl(190, 70%, 50%);
+  --au-cyan-9: hsl(190, 90%, 55%);
+  --au-cyan-10: hsl(190, 95%, 62%);
+  --au-cyan-11: hsl(190, 85%, 72%);
+  --au-cyan-12: hsl(190, 90%, 88%);
+
+  /* Magenta */
+  --au-magenta-1: hsl(320, 50%, 7%);
+  --au-magenta-2: hsl(320, 48%, 11%);
+  --au-magenta-3: hsl(320, 46%, 16%);
+  --au-magenta-4: hsl(320, 44%, 21%);
+  --au-magenta-5: hsl(320, 42%, 27%);
+  --au-magenta-6: hsl(320, 38%, 36%);
+  --au-magenta-7: hsl(320, 55%, 44%);
+  --au-magenta-8: hsl(320, 65%, 52%);
+  --au-magenta-9: hsl(320, 80%, 58%);
+  --au-magenta-10: hsl(320, 85%, 65%);
+  --au-magenta-11: hsl(320, 75%, 74%);
+  --au-magenta-12: hsl(320, 85%, 90%);
+
+  /* Emerald */
+  --au-emerald-1: hsl(155, 50%, 6%);
+  --au-emerald-2: hsl(155, 48%, 10%);
+  --au-emerald-3: hsl(155, 46%, 14%);
+  --au-emerald-4: hsl(155, 44%, 19%);
+  --au-emerald-5: hsl(155, 42%, 25%);
+  --au-emerald-6: hsl(155, 38%, 33%);
+  --au-emerald-7: hsl(155, 55%, 40%);
+  --au-emerald-8: hsl(155, 65%, 48%);
+  --au-emerald-9: hsl(155, 80%, 52%);
+  --au-emerald-10: hsl(155, 85%, 60%);
+  --au-emerald-11: hsl(155, 70%, 70%);
+  --au-emerald-12: hsl(155, 80%, 88%);
+
+  /* Amber */
+  --au-amber-1: hsl(40, 50%, 6%);
+  --au-amber-2: hsl(40, 48%, 10%);
+  --au-amber-3: hsl(40, 46%, 15%);
+  --au-amber-4: hsl(40, 44%, 20%);
+  --au-amber-5: hsl(40, 42%, 26%);
+  --au-amber-6: hsl(40, 38%, 35%);
+  --au-amber-7: hsl(40, 55%, 42%);
+  --au-amber-8: hsl(40, 70%, 50%);
+  --au-amber-9: hsl(40, 90%, 55%);
+  --au-amber-10: hsl(40, 95%, 62%);
+  --au-amber-11: hsl(40, 85%, 72%);
+  --au-amber-12: hsl(40, 90%, 88%);
+}
+
+/* --- Semantic Color Tokens (Dark Mode — default) --- */
+:root, [data-aurora-theme="dark"] {
+  --au-bg-base: var(--au-violet-1);
+  --au-bg-surface: var(--au-violet-2);
+  --au-bg-elevated: var(--au-violet-3);
+  --au-bg-interactive: var(--au-violet-4);
+  --au-bg-interactive-hover: var(--au-violet-5);
+
+  --au-text-primary: var(--au-violet-12);
+  --au-text-secondary: var(--au-violet-11);
+  --au-text-muted: var(--au-violet-8);
+  --au-text-disabled: var(--au-violet-7);
+
+  --au-border-default: var(--au-violet-6);
+  --au-border-strong: var(--au-violet-7);
+  --au-border-focus: var(--au-violet-9);
+
+  /* Accent (overridden by data-aurora-accent) */
+  --au-accent: var(--au-cyan-9);
+  --au-accent-hover: var(--au-cyan-10);
+  --au-accent-glow: var(--au-cyan-7);
+  --au-accent-text: var(--au-cyan-11);
+  --au-accent-contrast: hsl(260, 20%, 8%);
+
+  /* Status colors */
+  --au-success: var(--au-emerald-9);
+  --au-warning: var(--au-amber-9);
+  --au-error: var(--au-magenta-9);
+}
+
+/* Accent overrides */
+[data-aurora-accent="cyan"] {
+  --au-accent: var(--au-cyan-9);
+  --au-accent-hover: var(--au-cyan-10);
+  --au-accent-glow: var(--au-cyan-7);
+  --au-accent-text: var(--au-cyan-11);
+}
+
+[data-aurora-accent="violet"] {
+  --au-accent: var(--au-violet-9);
+  --au-accent-hover: var(--au-violet-10);
+  --au-accent-glow: var(--au-violet-7);
+  --au-accent-text: var(--au-violet-11);
+}
+
+[data-aurora-accent="magenta"] {
+  --au-accent: var(--au-magenta-9);
+  --au-accent-hover: var(--au-magenta-10);
+  --au-accent-glow: var(--au-magenta-7);
+  --au-accent-text: var(--au-magenta-11);
+}
+
+[data-aurora-accent="emerald"] {
+  --au-accent: var(--au-emerald-9);
+  --au-accent-hover: var(--au-emerald-10);
+  --au-accent-glow: var(--au-emerald-7);
+  --au-accent-text: var(--au-emerald-11);
+}
+
+[data-aurora-accent="amber"] {
+  --au-accent: var(--au-amber-9);
+  --au-accent-hover: var(--au-amber-10);
+  --au-accent-glow: var(--au-amber-7);
+  --au-accent-text: var(--au-amber-11);
+}
+
+/* --- Light Mode --- */
+[data-aurora-theme="light"] {
+  --au-bg-base: hsl(260, 15%, 97%);
+  --au-bg-surface: hsl(260, 12%, 93%);
+  --au-bg-elevated: hsl(0, 0%, 100%);
+  --au-bg-interactive: hsl(260, 10%, 90%);
+  --au-bg-interactive-hover: hsl(260, 12%, 86%);
+
+  --au-text-primary: var(--au-violet-1);
+  --au-text-secondary: hsl(260, 15%, 35%);
+  --au-text-muted: hsl(260, 10%, 50%);
+  --au-text-disabled: hsl(260, 8%, 65%);
+
+  --au-border-default: hsl(260, 10%, 82%);
+  --au-border-strong: hsl(260, 12%, 70%);
+  --au-border-focus: var(--au-violet-9);
+
+  --au-accent-contrast: hsl(0, 0%, 100%);
+}
