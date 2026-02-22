@@ -1,2 +1,1 @@
-// @aurora-ui/core — foundation package
-export {};
+export { cn } from "./utils/cn";
