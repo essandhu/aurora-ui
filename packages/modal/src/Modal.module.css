@@ -1,0 +1,117 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(var(--au-blur-surface));
+  animation: overlayIn var(--au-transition-base) ease-out;
+  z-index: 50;
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--au-bg-elevated);
+  border: 1px solid var(--au-border-default);
+  border-radius: var(--au-radius-lg);
+  padding: var(--au-space-6);
+  box-shadow:
+    var(--au-glow-md) var(--au-accent-glow),
+    0 24px 48px rgba(0, 0, 0, 0.4);
+  animation: contentIn var(--au-transition-base) ease-out;
+  z-index: 51;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.content:focus-visible {
+  outline: none;
+}
+
+.content[data-size="sm"] {
+  width: 90vw;
+  max-width: 400px;
+}
+
+.content[data-size="md"] {
+  width: 90vw;
+  max-width: 540px;
+}
+
+.content[data-size="lg"] {
+  width: 90vw;
+  max-width: 720px;
+}
+
+.title {
+  font-family: var(--au-font-sans);
+  font-size: var(--au-text-lg);
+  font-weight: var(--au-weight-semibold);
+  color: var(--au-text-primary);
+  margin: 0 0 var(--au-space-2);
+}
+
+.description {
+  font-family: var(--au-font-sans);
+  font-size: var(--au-text-md);
+  color: var(--au-text-secondary);
+  line-height: var(--au-leading-relaxed);
+  margin: 0 0 var(--au-space-4);
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--au-text-secondary);
+  cursor: pointer;
+  border-radius: var(--au-radius-sm);
+  padding: var(--au-space-1);
+  transition:
+    color var(--au-transition-base),
+    background var(--au-transition-base),
+    box-shadow var(--au-transition-glow);
+}
+
+.close:hover {
+  color: var(--au-text-primary);
+  background: var(--au-bg-interactive);
+}
+
+.close:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 var(--au-ring-offset) var(--au-bg-elevated),
+    0 0 0 calc(var(--au-ring-offset) + var(--au-ring-width)) var(--au-accent),
+    var(--au-glow-sm) var(--au-accent-glow);
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes contentIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (forced-colors: active) {
+  .content {
+    border: 2px solid LinkText;
+    box-shadow: none;
+  }
+  .close:focus-visible {
+    outline: 2px solid LinkText;
+    box-shadow: none;
+  }
+}
