@@ -1,0 +1,114 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--au-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--au-radius-md);
+  font-family: var(--au-font-sans);
+  font-weight: var(--au-weight-medium);
+  cursor: pointer;
+  transition:
+    background var(--au-transition-base),
+    box-shadow var(--au-transition-glow),
+    border-color var(--au-transition-base),
+    opacity var(--au-transition-base);
+  position: relative;
+}
+
+.root:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Sizes */
+.root[data-size="sm"] {
+  height: 32px;
+  padding: 0 var(--au-space-3);
+  font-size: var(--au-text-sm);
+}
+
+.root[data-size="md"] {
+  height: 40px;
+  padding: 0 var(--au-space-4);
+  font-size: var(--au-text-md);
+}
+
+.root[data-size="lg"] {
+  height: 48px;
+  padding: 0 var(--au-space-5);
+  font-size: var(--au-text-lg);
+}
+
+/* Solid variant */
+.root[data-variant="solid"] {
+  background: var(--au-accent);
+  color: var(--au-accent-contrast);
+}
+
+.root[data-variant="solid"]:hover:not(:disabled) {
+  background: var(--au-accent-hover);
+}
+
+/* Outline variant */
+.root[data-variant="outline"] {
+  background: transparent;
+  border-color: var(--au-accent);
+  color: var(--au-accent-text);
+}
+
+.root[data-variant="outline"]:hover:not(:disabled) {
+  background: var(--au-bg-interactive);
+}
+
+/* Ghost variant */
+.root[data-variant="ghost"] {
+  background: transparent;
+  color: var(--au-accent-text);
+}
+
+.root[data-variant="ghost"]:hover:not(:disabled) {
+  background: var(--au-bg-interactive);
+}
+
+/* Glow variant */
+.root[data-variant="glow"] {
+  background: var(--au-accent);
+  color: var(--au-accent-contrast);
+  box-shadow: var(--au-glow-sm) var(--au-accent-glow);
+}
+
+.root[data-variant="glow"]:hover:not(:disabled) {
+  background: var(--au-accent-hover);
+  box-shadow: var(--au-glow-md) var(--au-accent-glow);
+}
+
+.root[data-variant="glow"]:active:not(:disabled) {
+  box-shadow: var(--au-glow-lg) var(--au-accent-glow);
+}
+
+/* Focus ring */
+.root:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 var(--au-ring-offset) var(--au-bg-base),
+    0 0 0 calc(var(--au-ring-offset) + var(--au-ring-width)) var(--au-accent),
+    var(--au-glow-md) var(--au-accent-glow);
+}
+
+/* Loading state */
+.content[data-loading] {
+  opacity: 0;
+}
+
+.spinner {
+  position: absolute;
+}
+
+/* High contrast */
+@media (forced-colors: active) {
+  .root:focus-visible {
+    outline: 2px solid LinkText;
+    box-shadow: none;
+  }
+}

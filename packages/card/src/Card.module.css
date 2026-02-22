@@ -1,0 +1,38 @@
+.root {
+  border-radius: var(--au-radius-lg);
+  padding: var(--au-space-5);
+  font-family: var(--au-font-sans);
+  color: var(--au-text-primary);
+  transition: box-shadow var(--au-transition-glow);
+}
+
+.root[data-variant="surface"] {
+  background: var(--au-bg-surface);
+  border: 1px solid var(--au-border-default);
+}
+
+.root[data-variant="elevated"] {
+  background: var(--au-bg-elevated);
+  border: 1px solid var(--au-border-default);
+  box-shadow: var(--au-shadow-md);
+}
+
+.root[data-variant="elevated"]:hover {
+  box-shadow: var(--au-shadow-lg), var(--au-glow-sm) var(--au-accent-glow);
+}
+
+.root[data-variant="glass"] {
+  background: hsla(260, 20%, 12%, 0.6);
+  backdrop-filter: blur(var(--au-blur-surface));
+  -webkit-backdrop-filter: blur(var(--au-blur-surface));
+  border: 1px solid hsla(260, 30%, 40%, 0.2);
+}
+
+.root[data-variant="glass"]:hover {
+  border-color: hsla(260, 30%, 50%, 0.3);
+  box-shadow: var(--au-glow-sm) var(--au-accent-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root:hover { transition: none; }
+}
