@@ -11,8 +11,7 @@
       "require": "./dist/cjs/index.js",
       "types": "./dist/types/index.d.ts"
     },
-    "./tokens": "./dist/tokens.css",
-    "./styles.css": "./dist/styles.css"
+    "./styles.css": "./dist/core.css"
   },
   "sideEffects": ["*.css"],
   "files": ["dist"],
