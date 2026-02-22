@@ -1,0 +1,45 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--au-border-default);
+  border-radius: var(--au-radius-sm);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background var(--au-transition-base),
+    border-color var(--au-transition-base),
+    box-shadow var(--au-transition-glow);
+}
+
+.root[data-size="sm"] { width: 16px; height: 16px; }
+.root[data-size="md"] { width: 20px; height: 20px; }
+.root[data-size="lg"] { width: 24px; height: 24px; }
+
+.root[data-state="checked"] {
+  background: var(--au-accent);
+  border-color: var(--au-accent);
+  box-shadow: var(--au-glow-sm) var(--au-accent-glow);
+}
+
+.root:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 var(--au-ring-offset) var(--au-bg-base),
+    0 0 0 calc(var(--au-ring-offset) + var(--au-ring-width)) var(--au-accent),
+    var(--au-glow-sm) var(--au-accent-glow);
+}
+
+.root:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.indicator { display: flex; align-items: center; justify-content: center; }
+
+.checkIcon {
+  width: 100%;
+  height: 100%;
+  color: var(--au-accent-contrast);
+}
+
+@media (forced-colors: active) {
+  .root:focus-visible { outline: 2px solid LinkText; box-shadow: none; }
+}
