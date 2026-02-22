@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react";
+import "@aurora-ui-react/core/src/tokens/index.css";
 import { AuroraProvider } from "@aurora-ui-react/react";
 import React from "react";
 
