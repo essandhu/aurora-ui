@@ -1,0 +1,22 @@
+{
+  "name": "aurora-ui",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.4.1",
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "storybook": "storybook dev -p 6006",
+    "changeset": "changeset",
+    "release": "turbo run build && changeset publish",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.0",
+    "@changesets/cli": "^2.29.0",
+    "typescript": "^5.7.0"
+  }
+}
