@@ -1,0 +1,53 @@
+{
+  "name": "@aurora-ui/react",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "sideEffects": ["*.css"],
+  "files": ["dist"],
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly --outDir dist/types",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@aurora-ui/core": "workspace:*",
+    "@aurora-ui/button": "workspace:*",
+    "@aurora-ui/input": "workspace:*",
+    "@aurora-ui/select": "workspace:*",
+    "@aurora-ui/checkbox": "workspace:*",
+    "@aurora-ui/radio": "workspace:*",
+    "@aurora-ui/switch": "workspace:*",
+    "@aurora-ui/card": "workspace:*",
+    "@aurora-ui/modal": "workspace:*",
+    "@aurora-ui/toast": "workspace:*",
+    "@aurora-ui/tooltip": "workspace:*",
+    "@aurora-ui/badge": "workspace:*",
+    "@aurora-ui/avatar": "workspace:*",
+    "@aurora-ui/tabs": "workspace:*",
+    "@aurora-ui/accordion": "workspace:*",
+    "@aurora-ui/spinner": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "vite": "^6.1.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "typescript": "^5.7.0"
+  }
+}

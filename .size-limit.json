@@ -1,0 +1,18 @@
+[
+  { "path": "packages/button/dist/esm/index.js", "limit": "5 KB" },
+  { "path": "packages/input/dist/esm/index.js", "limit": "5 KB" },
+  { "path": "packages/select/dist/esm/index.js", "limit": "30 KB" },
+  { "path": "packages/checkbox/dist/esm/index.js", "limit": "10 KB" },
+  { "path": "packages/radio/dist/esm/index.js", "limit": "12 KB" },
+  { "path": "packages/switch/dist/esm/index.js", "limit": "8 KB" },
+  { "path": "packages/card/dist/esm/index.js", "limit": "5 KB" },
+  { "path": "packages/modal/dist/esm/index.js", "limit": "18 KB" },
+  { "path": "packages/toast/dist/esm/index.js", "limit": "14 KB" },
+  { "path": "packages/tooltip/dist/esm/index.js", "limit": "22 KB" },
+  { "path": "packages/badge/dist/esm/index.js", "limit": "5 KB" },
+  { "path": "packages/avatar/dist/esm/index.js", "limit": "5 KB" },
+  { "path": "packages/tabs/dist/esm/index.js", "limit": "11 KB" },
+  { "path": "packages/accordion/dist/esm/index.js", "limit": "11 KB" },
+  { "path": "packages/spinner/dist/esm/index.js", "limit": "5 KB" },
+  { "path": "packages/react/dist/esm/index.js", "limit": "50 KB" }
+]
