@@ -36,14 +36,11 @@
 
 .thumb {
   display: block;
-  box-sizing: border-box;
   border-radius: var(--au-radius-full);
-  background: var(--au-text-primary);
-  border: 2px solid var(--au-accent);
+  background: var(--au-accent);
+  border: none;
   cursor: grab;
-  transition:
-    box-shadow var(--au-transition-glow),
-    transform var(--au-transition-base);
+  transition: box-shadow var(--au-transition-glow);
 }
 
 .root[data-size="sm"] .thumb { width: 14px; height: 14px; }
@@ -56,7 +53,7 @@
 
 .thumb:active {
   cursor: grabbing;
-  transform: scale(1.1);
+  box-shadow: var(--au-glow-md) var(--au-accent-glow);
 }
 
 .root[data-variant="glow"] .thumb {
@@ -88,7 +85,7 @@
   .track { border: 1px solid CanvasText; }
   .range { background: Highlight; box-shadow: none; }
   .thumb {
-    background: ButtonFace;
+    background: Highlight;
     border: 2px solid ButtonText;
     box-shadow: none;
   }
