@@ -505,13 +505,13 @@ importers:
 
   packages/dropdown-menu:
     dependencies:
-      '@aurora-ui-react/core':
-        specifier: workspace:*
-        version: link:../core
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.0
         version: 2.1.16(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
+      '@aurora-ui-react/core':
+        specifier: workspace:*
+        version: link:../core
       '@testing-library/jest-dom':
         specifier: ^6.0.0
         version: 6.9.1
@@ -642,13 +642,13 @@ importers:
 
   packages/label:
     dependencies:
-      '@aurora-ui-react/core':
-        specifier: workspace:*
-        version: link:../core
       '@radix-ui/react-label':
         specifier: ^2.1.0
         version: 2.1.8(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
+      '@aurora-ui-react/core':
+        specifier: workspace:*
+        version: link:../core
       '@testing-library/jest-dom':
         specifier: ^6.0.0
         version: 6.9.1
@@ -783,13 +783,13 @@ importers:
 
   packages/popover:
     dependencies:
-      '@aurora-ui-react/core':
-        specifier: workspace:*
-        version: link:../core
       '@radix-ui/react-popover':
         specifier: ^1.1.0
         version: 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
+      '@aurora-ui-react/core':
+        specifier: workspace:*
+        version: link:../core
       '@testing-library/jest-dom':
         specifier: ^6.0.0
         version: 6.9.1
@@ -832,13 +832,13 @@ importers:
 
   packages/progress:
     dependencies:
-      '@aurora-ui-react/core':
-        specifier: workspace:*
-        version: link:../core
       '@radix-ui/react-progress':
         specifier: ^1.1.0
         version: 1.1.8(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
+      '@aurora-ui-react/core':
+        specifier: workspace:*
+        version: link:../core
       '@testing-library/jest-dom':
         specifier: ^6.0.0
         version: 6.9.1
@@ -1131,13 +1131,13 @@ importers:
 
   packages/separator:
     dependencies:
-      '@aurora-ui-react/core':
-        specifier: workspace:*
-        version: link:../core
       '@radix-ui/react-separator':
         specifier: ^1.1.0
         version: 1.1.8(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
+      '@aurora-ui-react/core':
+        specifier: workspace:*
+        version: link:../core
       '@testing-library/jest-dom':
         specifier: ^6.0.0
         version: 6.9.1
@@ -1176,11 +1176,10 @@ importers:
         version: 0.1.0(vitest@3.2.4(jsdom@26.1.0))
 
   packages/skeleton:
-    dependencies:
+    devDependencies:
       '@aurora-ui-react/core':
         specifier: workspace:*
         version: link:../core
-    devDependencies:
       '@testing-library/jest-dom':
         specifier: ^6.0.0
         version: 6.9.1
@@ -1534,13 +1533,13 @@ importers:
 
   packages/toolbar:
     dependencies:
-      '@aurora-ui-react/core':
-        specifier: workspace:*
-        version: link:../core
       '@radix-ui/react-toolbar':
         specifier: ^1.1.0
         version: 1.1.11(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
+      '@aurora-ui-react/core':
+        specifier: workspace:*
+        version: link:../core
       '@testing-library/jest-dom':
         specifier: ^6.0.0
         version: 6.9.1
