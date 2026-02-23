@@ -44,7 +44,7 @@ jobs:
           npm install -g wrangler
           DEPLOY_OUTPUT=$(wrangler pages deploy apps/storybook/storybook-static --project-name=aurora-ui-storybook --branch=${{ github.head_ref }} 2>&1)
           echo "$DEPLOY_OUTPUT"
-          DEPLOYMENT_URL=$(echo "$DEPLOY_OUTPUT" | grep -oP 'https://[^\s]+\.pages\.dev')
+          DEPLOYMENT_URL=$(echo "$DEPLOY_OUTPUT" | grep -oP 'https://[^\s]+\.pages\.dev' | tail -1)
           echo "deployment-url=$DEPLOYMENT_URL" >> "$GITHUB_OUTPUT"
 
       - name: Comment preview URL
