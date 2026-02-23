@@ -7,9 +7,9 @@
   user-select: none;
 }
 
-.root[data-size="sm"] { height: 16px; }
-.root[data-size="md"] { height: 20px; }
-.root[data-size="lg"] { height: 24px; }
+.root[data-size="sm"] { height: 16px; padding: 0 7px; }
+.root[data-size="md"] { height: 20px; padding: 0 9px; }
+.root[data-size="lg"] { height: 24px; padding: 0 11px; }
 
 .track {
   position: relative;
