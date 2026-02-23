@@ -1,0 +1,83 @@
+.root {
+  overflow: hidden;
+}
+
+.viewport {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.scrollbar {
+  display: flex;
+  touch-action: none;
+  user-select: none;
+  transition: opacity var(--au-transition-base);
+  padding: 2px;
+}
+
+.scrollbar[data-orientation="vertical"] {
+  width: 10px;
+}
+
+.scrollbar[data-orientation="horizontal"] {
+  height: 10px;
+  flex-direction: column;
+}
+
+.thumb {
+  position: relative;
+  flex: 1;
+  border-radius: var(--au-radius-full);
+  background: var(--au-border-strong);
+  transition:
+    background var(--au-transition-base),
+    box-shadow var(--au-transition-glow);
+}
+
+.thumb::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.thumb:hover {
+  background: var(--au-accent-glow);
+  box-shadow: var(--au-glow-xs) var(--au-accent-glow);
+}
+
+/* Minimal variant - hide track, only show thumb on hover/scroll */
+.root[data-variant="minimal"] .scrollbar {
+  background: transparent;
+  width: 6px;
+}
+
+.root[data-variant="minimal"] .scrollbar[data-orientation="horizontal"] {
+  height: 6px;
+}
+
+/* Default variant - visible track */
+.root[data-variant="default"] .scrollbar {
+  background: var(--au-bg-interactive);
+  border-radius: var(--au-radius-full);
+}
+
+.corner {
+  background: var(--au-bg-interactive);
+}
+
+@media (forced-colors: active) {
+  .thumb {
+    background: ButtonText;
+    box-shadow: none;
+  }
+  .scrollbar {
+    background: Canvas;
+  }
+}
