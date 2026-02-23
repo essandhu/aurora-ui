@@ -1,0 +1,154 @@
+/* Shared base for Toggle and ToggleGroupItem */
+.toggle,
+.groupItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--au-radius-md);
+  font-family: var(--au-font-sans);
+  font-weight: var(--au-weight-medium);
+  color: var(--au-text-secondary);
+  cursor: pointer;
+  transition:
+    background var(--au-transition-base),
+    box-shadow var(--au-transition-glow),
+    border-color var(--au-transition-base),
+    color var(--au-transition-base);
+}
+
+/* Sizes */
+.toggle[data-size="sm"],
+.group[data-size="sm"] .groupItem {
+  height: 32px;
+  padding: 0 var(--au-space-3);
+  font-size: var(--au-text-sm);
+}
+
+.toggle[data-size="md"],
+.group[data-size="md"] .groupItem {
+  height: 40px;
+  padding: 0 var(--au-space-4);
+  font-size: var(--au-text-md);
+}
+
+.toggle[data-size="lg"],
+.group[data-size="lg"] .groupItem {
+  height: 48px;
+  padding: 0 var(--au-space-5);
+  font-size: var(--au-text-lg);
+}
+
+/* Outline variant */
+.toggle[data-variant="outline"],
+.group[data-variant="outline"] .groupItem {
+  background: transparent;
+  border: 1px solid var(--au-border-default);
+}
+
+.toggle[data-variant="outline"]:hover:not(:disabled),
+.group[data-variant="outline"] .groupItem:hover:not(:disabled) {
+  background: var(--au-bg-interactive);
+  border-color: var(--au-border-strong);
+}
+
+.toggle[data-variant="outline"][data-state="on"],
+.group[data-variant="outline"] .groupItem[data-state="on"] {
+  background: var(--au-bg-interactive);
+  border-color: var(--au-accent);
+  color: var(--au-accent-text);
+  box-shadow: inset 0 1px 4px var(--au-accent-glow);
+}
+
+/* Ghost variant */
+.toggle[data-variant="ghost"],
+.group[data-variant="ghost"] .groupItem {
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.toggle[data-variant="ghost"]:hover:not(:disabled),
+.group[data-variant="ghost"] .groupItem:hover:not(:disabled) {
+  background: var(--au-bg-interactive);
+}
+
+.toggle[data-variant="ghost"][data-state="on"],
+.group[data-variant="ghost"] .groupItem[data-state="on"] {
+  background: var(--au-bg-interactive);
+  color: var(--au-accent-text);
+}
+
+/* Glow variant */
+.toggle[data-variant="glow"],
+.group[data-variant="glow"] .groupItem {
+  background: transparent;
+  border: 1px solid var(--au-border-default);
+}
+
+.toggle[data-variant="glow"]:hover:not(:disabled),
+.group[data-variant="glow"] .groupItem:hover:not(:disabled) {
+  box-shadow: var(--au-glow-xs) var(--au-accent-glow);
+}
+
+.toggle[data-variant="glow"][data-state="on"],
+.group[data-variant="glow"] .groupItem[data-state="on"] {
+  border-color: var(--au-accent);
+  color: var(--au-accent-text);
+  box-shadow:
+    inset 0 1px 4px var(--au-accent-glow),
+    var(--au-glow-sm) var(--au-accent-glow);
+}
+
+/* Focus ring */
+.toggle:focus-visible,
+.groupItem:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 var(--au-ring-offset) var(--au-bg-base),
+    0 0 0 calc(var(--au-ring-offset) + var(--au-ring-width)) var(--au-accent),
+    var(--au-glow-sm) var(--au-accent-glow);
+}
+
+/* Disabled */
+.toggle:disabled,
+.groupItem:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Group container */
+.group {
+  display: inline-flex;
+  gap: 1px;
+  border-radius: var(--au-radius-md);
+}
+
+.group .groupItem {
+  border-radius: 0;
+}
+
+.group .groupItem:first-child {
+  border-radius: var(--au-radius-md) 0 0 var(--au-radius-md);
+}
+
+.group .groupItem:last-child {
+  border-radius: 0 var(--au-radius-md) var(--au-radius-md) 0;
+}
+
+.group .groupItem:only-child {
+  border-radius: var(--au-radius-md);
+}
+
+@media (forced-colors: active) {
+  .toggle:focus-visible,
+  .groupItem:focus-visible {
+    outline: 2px solid LinkText;
+    box-shadow: none;
+  }
+
+  .toggle[data-state="on"],
+  .groupItem[data-state="on"] {
+    background: Highlight;
+    color: HighlightText;
+    box-shadow: none;
+  }
+}

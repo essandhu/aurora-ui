@@ -1,0 +1,140 @@
+.content,
+.subContent {
+  min-width: 180px;
+  padding: var(--au-space-1);
+  border-radius: var(--au-radius-md);
+  background: var(--au-bg-elevated);
+  border: 1px solid var(--au-border-default);
+  box-shadow:
+    var(--au-glow-sm) var(--au-accent-glow),
+    0 16px 32px rgba(0, 0, 0, 0.4);
+  animation: menuIn var(--au-transition-base) ease-out;
+  z-index: 50;
+}
+
+/* Glass variant */
+.content[data-variant="glass"],
+.subContent[data-variant="glass"] {
+  background: rgba(20, 15, 30, 0.8);
+  backdrop-filter: blur(var(--au-blur-surface));
+  border-color: var(--au-accent-glow);
+  box-shadow:
+    var(--au-glow-md) var(--au-accent-glow),
+    0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+.item,
+.checkboxItem,
+.radioItem,
+.subTrigger {
+  display: flex;
+  align-items: center;
+  gap: var(--au-space-2);
+  padding: var(--au-space-2) var(--au-space-3);
+  border-radius: var(--au-radius-sm);
+  font-family: var(--au-font-sans);
+  font-size: var(--au-text-md);
+  color: var(--au-text-primary);
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transition:
+    background var(--au-transition-base),
+    box-shadow var(--au-transition-glow);
+}
+
+.item[data-highlighted],
+.checkboxItem[data-highlighted],
+.radioItem[data-highlighted],
+.subTrigger[data-highlighted] {
+  background: var(--au-bg-interactive);
+  box-shadow: var(--au-glow-xs) var(--au-accent-glow);
+}
+
+.item[data-disabled],
+.checkboxItem[data-disabled],
+.radioItem[data-disabled],
+.subTrigger[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkboxItem,
+.radioItem {
+  padding-left: var(--au-space-6);
+  position: relative;
+}
+
+.itemIndicator {
+  position: absolute;
+  left: var(--au-space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--au-accent-text);
+}
+
+.subTrigger {
+  justify-content: space-between;
+}
+
+.subTrigger[data-state="open"] {
+  background: var(--au-bg-interactive);
+}
+
+.subChevron {
+  color: var(--au-text-secondary);
+  flex-shrink: 0;
+}
+
+.separator {
+  height: 1px;
+  margin: var(--au-space-1) 0;
+  background: var(--au-border-default);
+}
+
+.label {
+  padding: var(--au-space-2) var(--au-space-3);
+  font-family: var(--au-font-sans);
+  font-size: var(--au-text-sm);
+  font-weight: var(--au-weight-medium);
+  color: var(--au-text-secondary);
+}
+
+.group {
+  padding: var(--au-space-1) 0;
+}
+
+@keyframes menuIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content,
+  .subContent {
+    animation: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .content,
+  .subContent {
+    border: 1px solid LinkText;
+    box-shadow: none;
+  }
+  .item[data-highlighted],
+  .checkboxItem[data-highlighted],
+  .radioItem[data-highlighted],
+  .subTrigger[data-highlighted] {
+    background: Highlight;
+    color: HighlightText;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,107 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--au-space-1);
+  padding: var(--au-space-2);
+  border-radius: var(--au-radius-lg);
+  background: var(--au-bg-surface);
+  border: 1px solid var(--au-border-default);
+}
+
+/* Glass variant */
+.root[data-variant="glass"] {
+  background: rgba(20, 15, 30, 0.8);
+  backdrop-filter: blur(var(--au-blur-surface));
+  border-color: var(--au-accent-glow);
+  box-shadow: var(--au-glow-sm) var(--au-accent-glow);
+}
+
+.button,
+.link,
+.toggleItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 var(--au-space-3);
+  border: none;
+  border-radius: var(--au-radius-md);
+  font-family: var(--au-font-sans);
+  font-size: var(--au-text-sm);
+  font-weight: var(--au-weight-medium);
+  color: var(--au-text-secondary);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background var(--au-transition-base),
+    color var(--au-transition-base),
+    box-shadow var(--au-transition-glow);
+  outline: none;
+  text-decoration: none;
+}
+
+.button:hover:not(:disabled),
+.link:hover,
+.toggleItem:hover:not(:disabled) {
+  background: var(--au-bg-interactive);
+  color: var(--au-text-primary);
+}
+
+.button:focus-visible,
+.link:focus-visible,
+.toggleItem:focus-visible {
+  box-shadow:
+    0 0 0 var(--au-ring-offset) var(--au-bg-surface),
+    0 0 0 calc(var(--au-ring-offset) + var(--au-ring-width)) var(--au-accent),
+    var(--au-glow-sm) var(--au-accent-glow);
+}
+
+.button:disabled,
+.toggleItem:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Toggle pressed state */
+.toggleItem[data-state="on"] {
+  background: var(--au-bg-interactive);
+  color: var(--au-accent-text);
+  box-shadow: inset 0 1px 4px var(--au-accent-glow);
+}
+
+/* Toggle group */
+.toggleGroup {
+  display: inline-flex;
+  gap: 1px;
+}
+
+/* Separator */
+.separator {
+  width: 1px;
+  height: 20px;
+  margin: 0 var(--au-space-1);
+  background: var(--au-border-default);
+}
+
+.root[data-variant="glass"] .separator {
+  background: var(--au-accent-glow);
+  box-shadow: var(--au-glow-xs) var(--au-accent-glow);
+}
+
+@media (forced-colors: active) {
+  .root {
+    border: 1px solid CanvasText;
+    box-shadow: none;
+  }
+  .button:focus-visible,
+  .link:focus-visible,
+  .toggleItem:focus-visible {
+    outline: 2px solid LinkText;
+    box-shadow: none;
+  }
+  .toggleItem[data-state="on"] {
+    background: Highlight;
+    color: HighlightText;
+    box-shadow: none;
+  }
+}

@@ -35,7 +35,22 @@
     "@aurora-ui-react/avatar": "workspace:*",
     "@aurora-ui-react/tabs": "workspace:*",
     "@aurora-ui-react/accordion": "workspace:*",
-    "@aurora-ui-react/spinner": "workspace:*"
+    "@aurora-ui-react/spinner": "workspace:*",
+    "@aurora-ui-react/separator": "workspace:*",
+    "@aurora-ui-react/label": "workspace:*",
+    "@aurora-ui-react/progress": "workspace:*",
+    "@aurora-ui-react/popover": "workspace:*",
+    "@aurora-ui-react/alert-dialog": "workspace:*",
+    "@aurora-ui-react/dropdown-menu": "workspace:*",
+    "@aurora-ui-react/textarea": "workspace:*",
+    "@aurora-ui-react/skeleton": "workspace:*",
+    "@aurora-ui-react/slider": "workspace:*",
+    "@aurora-ui-react/toggle": "workspace:*",
+    "@aurora-ui-react/scroll-area": "workspace:*",
+    "@aurora-ui-react/collapsible": "workspace:*",
+    "@aurora-ui-react/hover-card": "workspace:*",
+    "@aurora-ui-react/toolbar": "workspace:*",
+    "@aurora-ui-react/navigation-menu": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",

@@ -1,0 +1,219 @@
+.root {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--au-space-1);
+}
+
+.trigger,
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--au-space-1);
+  padding: var(--au-space-2) var(--au-space-3);
+  border: none;
+  border-radius: var(--au-radius-md);
+  background: transparent;
+  font-family: var(--au-font-sans);
+  font-size: var(--au-text-sm);
+  font-weight: var(--au-weight-medium);
+  color: var(--au-text-secondary);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background var(--au-transition-base),
+    color var(--au-transition-base),
+    box-shadow var(--au-transition-glow);
+  outline: none;
+}
+
+.trigger:hover,
+.link:hover {
+  background: var(--au-bg-interactive);
+  color: var(--au-text-primary);
+}
+
+.trigger[data-state="open"] {
+  background: var(--au-bg-interactive);
+  color: var(--au-accent-text);
+}
+
+.link[data-active] {
+  color: var(--au-accent-text);
+}
+
+.trigger:focus-visible,
+.link:focus-visible {
+  box-shadow:
+    0 0 0 var(--au-ring-offset) var(--au-bg-base),
+    0 0 0 calc(var(--au-ring-offset) + var(--au-ring-width)) var(--au-accent);
+}
+
+.chevron {
+  color: var(--au-text-secondary);
+  transition: transform var(--au-transition-base);
+  flex-shrink: 0;
+}
+
+.trigger[data-state="open"] .chevron {
+  transform: rotate(180deg);
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: contentIn var(--au-transition-base) ease-out;
+}
+
+.content[data-motion="from-start"] {
+  animation-name: contentFromStart;
+}
+
+.content[data-motion="from-end"] {
+  animation-name: contentFromEnd;
+}
+
+.content[data-motion="to-start"] {
+  animation-name: contentToStart;
+}
+
+.content[data-motion="to-end"] {
+  animation-name: contentToEnd;
+}
+
+.viewportPosition {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  perspective: 2000px;
+}
+
+.viewport {
+  position: relative;
+  margin-top: var(--au-space-2);
+  width: var(--radix-navigation-menu-viewport-width);
+  height: var(--radix-navigation-menu-viewport-height);
+  overflow: hidden;
+  border-radius: var(--au-radius-lg);
+  background: var(--au-bg-elevated);
+  border: 1px solid var(--au-border-default);
+  box-shadow:
+    var(--au-glow-md) var(--au-accent-glow),
+    0 16px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(var(--au-blur-surface));
+  transition:
+    width var(--au-transition-base),
+    height var(--au-transition-base);
+}
+
+.viewport[data-state="open"] {
+  animation: viewportIn var(--au-transition-base) ease-out;
+}
+
+.viewport[data-state="closed"] {
+  animation: viewportOut var(--au-transition-base) ease-out;
+}
+
+.indicator {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 8px;
+  top: 100%;
+  overflow: hidden;
+  z-index: 1;
+  transition: width var(--au-transition-base), transform var(--au-transition-base);
+}
+
+.indicatorArrow {
+  position: relative;
+  top: 70%;
+  width: 10px;
+  height: 10px;
+  background: var(--au-bg-elevated);
+  border: 1px solid var(--au-border-default);
+  border-bottom: none;
+  border-right: none;
+  transform: rotate(45deg);
+  box-shadow: var(--au-glow-xs) var(--au-accent-glow);
+}
+
+@keyframes contentIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes contentFromStart {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes contentFromEnd {
+  from { opacity: 0; transform: translateX(8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes contentToStart {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-8px); }
+}
+
+@keyframes contentToEnd {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(8px); }
+}
+
+@keyframes viewportIn {
+  from { opacity: 0; transform: rotateX(-10deg) scale(0.96); }
+  to { opacity: 1; transform: rotateX(0) scale(1); }
+}
+
+@keyframes viewportOut {
+  from { opacity: 1; transform: rotateX(0) scale(1); }
+  to { opacity: 0; transform: rotateX(-10deg) scale(0.96); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content,
+  .content[data-motion="from-start"],
+  .content[data-motion="from-end"],
+  .content[data-motion="to-start"],
+  .content[data-motion="to-end"],
+  .viewport[data-state="open"],
+  .viewport[data-state="closed"] {
+    animation: none;
+  }
+
+  .viewport,
+  .indicator {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .trigger:focus-visible,
+  .link:focus-visible {
+    outline: 2px solid LinkText;
+    box-shadow: none;
+  }
+  .viewport {
+    border: 2px solid LinkText;
+    box-shadow: none;
+  }
+  .trigger[data-state="open"] {
+    background: Highlight;
+    color: HighlightText;
+  }
+}
