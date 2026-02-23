@@ -41,6 +41,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          packageManager: npm
           command: pages deploy apps/storybook/storybook-static --project-name=aurora-ui-storybook --branch=${{ github.head_ref }}
 
       - name: Comment preview URL
