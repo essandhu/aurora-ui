@@ -1,0 +1,34 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--au-space-5);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--au-space-2);
+}
+
+.description {
+  font-family: var(--au-font-sans);
+  font-size: var(--au-text-sm);
+  color: var(--au-text-muted);
+  margin: 0;
+  line-height: var(--au-leading-normal);
+}
+
+.message {
+  font-family: var(--au-font-sans);
+  font-size: var(--au-text-sm);
+  margin: 0;
+  line-height: var(--au-leading-normal);
+}
+
+.message[data-type="error"] {
+  color: var(--au-magenta-11);
+}
+
+.message[data-type="success"] {
+  color: var(--au-emerald-11);
+}
