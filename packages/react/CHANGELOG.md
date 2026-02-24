@@ -1,0 +1,125 @@
+# @aurora-ui-react/react
+
+## 0.2.0
+
+### Minor Changes
+
+- 167612e: Add Accordion component with collapsible sections and Aurora styling
+- 167612e: Add AlertDialog component for confirmation dialogs with accessible focus management
+- 728ec36: Add Alert component with variant-dependent ARIA roles for inline feedback
+- 728ec36: Add AspectRatio component for responsive media containers
+- 167612e: Add Avatar component with image, fallback, and status indicator support
+- 167612e: Add Badge component with solid, soft, outline, and glow variants
+- 728ec36: Add Breadcrumb component with semantic nav, polymorphic links, and aria-current support
+- 167612e: Add Button component with solid, soft, outline, ghost, and glow variants
+- 167612e: Add Card component with elevated, outlined, and glass variants
+- 167612e: Add Checkbox component with Radix primitive and animated check indicator
+- 167612e: Add Collapsible component for expandable content sections
+- 728ec36: Add Command component for command palettes with inline and dialog modes
+- 167612e: Add DropdownMenu component with Radix primitive, sub-menus, and checkbox/radio items
+- 728ec36: Add Form component with field context, Label integration, and useFormField hook
+- 167612e: Add HoverCard component for rich hover content previews
+- 167612e: Add Input component with size variants, error states, and icon slots
+- 167612e: Add Label component with required indicator and error state styling
+- 167612e: Add Modal dialog component with Radix primitive and backdrop blur
+- 167612e: Add NavigationMenu component with animated viewport and indicator
+- 167612e: Add Popover component with Radix positioning and Aurora glow styling
+- 167612e: Add Progress component with linear and circular variants
+- 167612e: Add Radio group component with Radix primitive and glow selection indicator
+- 167612e: Add ScrollArea component with custom scrollbar styling
+- 167612e: Add Select component with Radix primitive, groups, and search filtering
+- 167612e: Add Separator component with horizontal and vertical orientations
+- 728ec36: Add Sheet component for side panel dialogs with left/right/top/bottom positioning
+- 167612e: Add Skeleton component with pulse and wave animation variants
+- 167612e: Add Slider component with Radix primitive and accent glow thumb
+- 167612e: Add Spinner component with size variants and accessible labeling
+- 167612e: Add Switch component with Radix primitive and animated thumb
+- 728ec36: Add Table component with striped/bordered variants and sticky header support
+- 167612e: Add Tabs component with Radix primitive and underline/enclosed variants
+- 167612e: Add Textarea component with auto-resize and character count support
+- 167612e: Add Toast notification component with provider, viewport, and action support
+- 167612e: Add Toggle and ToggleGroup components with Radix primitives
+- 167612e: Add Toolbar component with Radix primitive for grouped action controls
+- 167612e: Add Tooltip component with Radix positioning and Aurora glow arrow
+- 728ec36: Add VisuallyHidden component for screen-reader-only content
+
+### Patch Changes
+
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [728ec36]
+- Updated dependencies [728ec36]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [728ec36]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [728ec36]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [728ec36]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [728ec36]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [728ec36]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [167612e]
+- Updated dependencies [728ec36]
+  - @aurora-ui-react/accordion@1.0.0
+  - @aurora-ui-react/alert-dialog@1.0.0
+  - @aurora-ui-react/alert@1.0.0
+  - @aurora-ui-react/aspect-ratio@1.0.0
+  - @aurora-ui-react/avatar@1.0.0
+  - @aurora-ui-react/badge@1.0.0
+  - @aurora-ui-react/breadcrumb@1.0.0
+  - @aurora-ui-react/button@1.0.0
+  - @aurora-ui-react/card@1.0.0
+  - @aurora-ui-react/checkbox@1.0.0
+  - @aurora-ui-react/collapsible@1.0.0
+  - @aurora-ui-react/command@1.0.0
+  - @aurora-ui-react/core@0.2.0
+  - @aurora-ui-react/dropdown-menu@1.0.0
+  - @aurora-ui-react/form@1.0.0
+  - @aurora-ui-react/hover-card@1.0.0
+  - @aurora-ui-react/input@1.0.0
+  - @aurora-ui-react/label@1.0.0
+  - @aurora-ui-react/modal@1.0.0
+  - @aurora-ui-react/navigation-menu@1.0.0
+  - @aurora-ui-react/popover@1.0.0
+  - @aurora-ui-react/progress@1.0.0
+  - @aurora-ui-react/radio@1.0.0
+  - @aurora-ui-react/scroll-area@1.0.0
+  - @aurora-ui-react/select@1.0.0
+  - @aurora-ui-react/separator@1.0.0
+  - @aurora-ui-react/sheet@1.0.0
+  - @aurora-ui-react/skeleton@1.0.0
+  - @aurora-ui-react/slider@1.0.0
+  - @aurora-ui-react/spinner@1.0.0
+  - @aurora-ui-react/switch@1.0.0
+  - @aurora-ui-react/table@1.0.0
+  - @aurora-ui-react/tabs@1.0.0
+  - @aurora-ui-react/textarea@1.0.0
+  - @aurora-ui-react/toast@1.0.0
+  - @aurora-ui-react/toggle@1.0.0
+  - @aurora-ui-react/toolbar@1.0.0
+  - @aurora-ui-react/tooltip@1.0.0
+  - @aurora-ui-react/visually-hidden@1.0.0
