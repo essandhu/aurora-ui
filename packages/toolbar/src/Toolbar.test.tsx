@@ -142,4 +142,28 @@ describe("Toolbar", () => {
     );
     expect(container.firstChild).toHaveClass("custom");
   });
+
+  // States
+  it("disables individual button", () => {
+    render(
+      <Toolbar aria-label="Actions">
+        <Toolbar.Button disabled>Bold</Toolbar.Button>
+      </Toolbar>
+    );
+    expect(screen.getByRole("button", { name: "Bold" })).toBeDisabled();
+  });
+
+  it("disabled button does not fire onClick", async () => {
+    const user = userEvent.setup();
+    const onClick = vi.fn();
+    render(
+      <Toolbar aria-label="Actions">
+        <Toolbar.Button disabled onClick={onClick}>
+          Bold
+        </Toolbar.Button>
+      </Toolbar>
+    );
+    await user.click(screen.getByRole("button", { name: "Bold" }));
+    expect(onClick).not.toHaveBeenCalled();
+  });
 });

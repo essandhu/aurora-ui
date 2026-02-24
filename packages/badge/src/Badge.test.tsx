@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { axe } from "vitest-axe";
 import { Badge } from "./Badge";
 
@@ -53,5 +53,24 @@ describe("Badge", () => {
   it("merges custom className", () => {
     render(<Badge className="custom">Tag</Badge>);
     expect(screen.getByText("Tag")).toHaveClass("custom");
+  });
+
+  // Interactions
+  it("forwards click events via spread props", () => {
+    const onClick = vi.fn();
+    render(<Badge onClick={onClick}>Tag</Badge>);
+    fireEvent.click(screen.getByText("Tag"));
+    expect(onClick).toHaveBeenCalledOnce();
+  });
+
+  // States
+  it("forwards aria-disabled attribute", () => {
+    render(<Badge aria-disabled="true">Tag</Badge>);
+    expect(screen.getByText("Tag")).toHaveAttribute("aria-disabled", "true");
+  });
+
+  it("forwards hidden attribute", () => {
+    const { container } = render(<Badge hidden>Tag</Badge>);
+    expect(container.firstElementChild).toHaveAttribute("hidden");
   });
 });

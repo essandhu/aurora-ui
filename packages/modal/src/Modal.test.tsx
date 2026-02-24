@@ -133,4 +133,43 @@ describe("Modal", () => {
     await user.click(screen.getByRole("button", { name: "Open" }));
     expect(screen.getByRole("dialog")).toHaveClass("custom");
   });
+
+  // Variants — sm size
+  it("supports sm size on content", async () => {
+    const user = userEvent.setup();
+    render(
+      <Modal>
+        <Modal.Trigger asChild>
+          <button>Open</button>
+        </Modal.Trigger>
+        <Modal.Content size="sm">
+          <Modal.Title>Small Modal</Modal.Title>
+          <Modal.Description>Small description</Modal.Description>
+        </Modal.Content>
+      </Modal>
+    );
+    await user.click(screen.getByRole("button", { name: "Open" }));
+    expect(screen.getByRole("dialog")).toHaveAttribute("data-size", "sm");
+  });
+
+  // States — controlled open
+  it("renders open when controlled with open prop", () => {
+    render(
+      <Modal open>
+        <Modal.Content>
+          <Modal.Title>Controlled</Modal.Title>
+          <Modal.Description>Controlled modal</Modal.Description>
+        </Modal.Content>
+      </Modal>
+    );
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
+  });
+
+  it("moves focus into modal when opened", async () => {
+    const user = userEvent.setup();
+    renderModal();
+    await user.click(screen.getByRole("button", { name: "Open Modal" }));
+    const dialog = screen.getByRole("dialog");
+    expect(dialog.contains(document.activeElement)).toBe(true);
+  });
 });

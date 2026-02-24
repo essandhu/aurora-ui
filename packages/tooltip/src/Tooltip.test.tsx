@@ -90,4 +90,21 @@ describe("Tooltip", () => {
     await screen.findByRole("tooltip");
     expect(await axe(container)).toHaveNoViolations();
   });
+
+  // Ref forwarding
+  it("forwards ref on content", async () => {
+    const ref = vi.fn();
+    const user = userEvent.setup();
+    render(
+      <Tooltip>
+        <Tooltip.Trigger asChild>
+          <button>Hover me</button>
+        </Tooltip.Trigger>
+        <Tooltip.Content ref={ref}>Tooltip text</Tooltip.Content>
+      </Tooltip>
+    );
+    await user.hover(screen.getByRole("button"));
+    await screen.findByRole("tooltip");
+    expect(ref).toHaveBeenCalledWith(expect.any(HTMLDivElement));
+  });
 });

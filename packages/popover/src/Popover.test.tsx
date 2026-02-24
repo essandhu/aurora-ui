@@ -115,4 +115,27 @@ describe("Popover", () => {
     const content = screen.getByText("Popover content").closest("[data-variant]");
     expect(content).toHaveClass("custom");
   });
+
+  // States — controlled open
+  it("renders open when controlled with open prop", () => {
+    render(
+      <Popover open>
+        <Popover.Trigger asChild>
+          <button>Open</button>
+        </Popover.Trigger>
+        <Popover.Content>
+          <p>Controlled content</p>
+        </Popover.Content>
+      </Popover>
+    );
+    expect(screen.getByText("Controlled content")).toBeInTheDocument();
+  });
+
+  it("content has data-state open when visible", async () => {
+    const user = userEvent.setup();
+    renderPopover();
+    await user.click(screen.getByRole("button", { name: "Open" }));
+    const content = screen.getByText("Popover content").closest("[data-variant]");
+    expect(content).toHaveAttribute("data-state", "open");
+  });
 });

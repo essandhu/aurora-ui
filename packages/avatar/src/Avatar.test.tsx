@@ -61,4 +61,22 @@ describe("Avatar", () => {
     render(<Avatar className="custom" fallback="JD" alt="User" />);
     expect(screen.getByText("JD").parentElement).toHaveClass("custom");
   });
+
+  // Variants — accent
+  it("sets accent data attribute", () => {
+    render(<Avatar accent="emerald" fallback="JD" alt="User" />);
+    expect(screen.getByText("JD").parentElement).toHaveAttribute(
+      "data-accent",
+      "emerald"
+    );
+  });
+
+  // Sizes — lg
+  it("applies lg size", () => {
+    render(<Avatar size="lg" fallback="JD" alt="User" />);
+    expect(screen.getByText("JD").parentElement).toHaveAttribute(
+      "data-size",
+      "lg"
+    );
+  });
 });

@@ -119,4 +119,33 @@ describe("NavigationMenu", () => {
     const content = document.querySelector(".custom-content");
     expect(content).toBeInTheDocument();
   });
+
+  // Variants — Radix data-state
+  it("trigger has data-state closed by default", () => {
+    renderNav();
+    expect(screen.getByText("Products")).toHaveAttribute(
+      "data-state",
+      "closed"
+    );
+  });
+
+  it("trigger has data-state open when expanded", async () => {
+    const user = userEvent.setup();
+    renderNav();
+    await user.click(screen.getByText("Products"));
+    expect(screen.getByText("Products")).toHaveAttribute(
+      "data-state",
+      "open"
+    );
+  });
+
+  // States
+  it("closes content on Escape key", async () => {
+    const user = userEvent.setup();
+    renderNav();
+    await user.click(screen.getByText("Products"));
+    expect(screen.getByText("Product A")).toBeInTheDocument();
+    await user.keyboard("{Escape}");
+    expect(screen.queryByText("Product A")).not.toBeInTheDocument();
+  });
 });
