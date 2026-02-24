@@ -85,4 +85,12 @@ describe("Spinner", () => {
     render(<Spinner className="custom" />);
     expect(screen.getByRole("status")).toHaveClass("custom");
   });
+
+  // States
+  it("renders dot elements for dots variant", () => {
+    render(<Spinner variant="dots" />);
+    const status = screen.getByRole("status");
+    const dots = status.querySelectorAll("span");
+    expect(dots).toHaveLength(3);
+  });
 });

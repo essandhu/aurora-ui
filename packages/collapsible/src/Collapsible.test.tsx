@@ -133,4 +133,17 @@ describe("Collapsible", () => {
     );
     expect(container.firstChild).toHaveClass("custom");
   });
+
+  // Variants — Radix data-state
+  it("root has data-state closed by default", () => {
+    const { container } = renderCollapsible();
+    expect(container.firstChild).toHaveAttribute("data-state", "closed");
+  });
+
+  it("root has data-state open when expanded", async () => {
+    const user = userEvent.setup();
+    const { container } = renderCollapsible();
+    await user.click(screen.getByRole("button", { name: "Toggle" }));
+    expect(container.firstChild).toHaveAttribute("data-state", "open");
+  });
 });

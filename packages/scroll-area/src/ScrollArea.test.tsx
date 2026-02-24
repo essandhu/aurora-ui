@@ -73,4 +73,26 @@ describe("ScrollArea", () => {
     );
     expect(container.firstChild).toHaveClass("custom");
   });
+
+  // Interactions
+  it("renders viewport for scrollable content", () => {
+    const { container } = render(
+      <ScrollArea style={{ height: 200 }}>
+        <div style={{ height: 1000 }}>Tall content</div>
+      </ScrollArea>
+    );
+    const viewport = container.querySelector("[data-radix-scroll-area-viewport]");
+    expect(viewport).toBeInTheDocument();
+    expect(viewport).toHaveTextContent("Tall content");
+  });
+
+  // States
+  it("forwards data attributes via spread props", () => {
+    const { container } = render(
+      <ScrollArea data-testid="scroll" style={{ height: 200 }}>
+        <p>Content</p>
+      </ScrollArea>
+    );
+    expect(container.firstChild).toHaveAttribute("data-testid", "scroll");
+  });
 });

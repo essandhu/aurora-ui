@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { axe } from "vitest-axe";
 import { Card } from "./Card";
 
@@ -52,5 +53,39 @@ describe("Card", () => {
   it("merges custom className", () => {
     const { container } = render(<Card className="custom">Content</Card>);
     expect(container.firstElementChild).toHaveClass("custom");
+  });
+
+  // Interactions
+  it("forwards click events via spread props", async () => {
+    const user = userEvent.setup();
+    const onClick = vi.fn();
+    render(<Card onClick={onClick}>Content</Card>);
+    await user.click(screen.getByText("Content"));
+    expect(onClick).toHaveBeenCalledOnce();
+  });
+
+  it("supports keyboard interaction via onKeyDown", async () => {
+    const user = userEvent.setup();
+    const onKeyDown = vi.fn();
+    render(
+      <Card tabIndex={0} onKeyDown={onKeyDown}>
+        Content
+      </Card>
+    );
+    const card = screen.getByText("Content").closest("[tabindex]")!;
+    card.focus();
+    await user.keyboard("{Enter}");
+    expect(onKeyDown).toHaveBeenCalled();
+  });
+
+  // States
+  it("forwards aria-disabled attribute", () => {
+    const { container } = render(
+      <Card aria-disabled="true">Content</Card>
+    );
+    expect(container.firstElementChild).toHaveAttribute(
+      "aria-disabled",
+      "true"
+    );
   });
 });
