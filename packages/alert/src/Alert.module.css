@@ -1,0 +1,111 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--au-space-3);
+  padding: var(--au-space-4);
+  border-radius: var(--au-radius-md);
+  background: var(--au-bg-elevated);
+  border: 1px solid var(--au-border-default);
+  font-family: var(--au-font-sans);
+}
+
+.root::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: var(--au-radius-md) 0 0 var(--au-radius-md);
+}
+
+/* Info variant */
+.root[data-variant="info"] {
+  border-color: var(--au-cyan-6);
+}
+
+.root[data-variant="info"]::before {
+  background: var(--au-cyan-9);
+}
+
+.root[data-variant="info"] .icon {
+  color: var(--au-cyan-9);
+}
+
+/* Success variant */
+.root[data-variant="success"] {
+  border-color: var(--au-emerald-6);
+}
+
+.root[data-variant="success"]::before {
+  background: var(--au-emerald-9);
+}
+
+.root[data-variant="success"] .icon {
+  color: var(--au-emerald-9);
+}
+
+/* Warning variant */
+.root[data-variant="warning"] {
+  border-color: var(--au-amber-6);
+}
+
+.root[data-variant="warning"]::before {
+  background: var(--au-amber-9);
+}
+
+.root[data-variant="warning"] .icon {
+  color: var(--au-amber-9);
+}
+
+/* Error variant */
+.root[data-variant="error"] {
+  border-color: var(--au-magenta-6);
+}
+
+.root[data-variant="error"]::before {
+  background: var(--au-magenta-9);
+}
+
+.root[data-variant="error"] .icon {
+  color: var(--au-magenta-9);
+}
+
+.icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: var(--au-text-md);
+  font-weight: var(--au-weight-semibold);
+  color: var(--au-text-primary);
+  margin: 0;
+  line-height: var(--au-leading-tight);
+}
+
+.description {
+  font-size: var(--au-text-sm);
+  color: var(--au-text-secondary);
+  margin: 0;
+  line-height: var(--au-leading-relaxed);
+}
+
+@media (forced-colors: active) {
+  .root {
+    border: 2px solid LinkText;
+  }
+  .root::before {
+    background: LinkText;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root {
+    animation: none;
+  }
+}
