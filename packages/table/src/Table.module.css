@@ -1,0 +1,110 @@
+.wrapper {
+  overflow-x: auto;
+  border-radius: var(--au-radius-md);
+}
+
+.root {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--au-font-sans);
+  color: var(--au-text-primary);
+}
+
+.header {
+  border-bottom: 1px solid var(--au-border-default);
+}
+
+.head {
+  text-align: left;
+  font-weight: var(--au-weight-semibold);
+  color: var(--au-text-secondary);
+  background: var(--au-bg-surface);
+  backdrop-filter: blur(8px);
+}
+
+/* Sticky header */
+.root[data-sticky-header] .head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Size variants */
+.root[data-size="sm"] .head,
+.root[data-size="sm"] .cell {
+  padding: var(--au-space-2) var(--au-space-3);
+  font-size: var(--au-text-sm);
+}
+
+.root[data-size="md"] .head,
+.root[data-size="md"] .cell {
+  padding: var(--au-space-3) var(--au-space-4);
+  font-size: var(--au-text-md);
+}
+
+.root[data-size="lg"] .head,
+.root[data-size="lg"] .cell {
+  padding: var(--au-space-4) var(--au-space-5);
+  font-size: var(--au-text-md);
+}
+
+.body {
+  border-top: 1px solid var(--au-border-default);
+}
+
+.row {
+  border-bottom: 1px solid var(--au-border-default);
+  transition:
+    background var(--au-transition-base),
+    box-shadow var(--au-transition-glow);
+}
+
+.body .row:hover {
+  background: var(--au-bg-interactive);
+  box-shadow: inset var(--au-glow-xs) var(--au-accent-glow);
+}
+
+.cell {
+  vertical-align: middle;
+}
+
+.footer {
+  border-top: 1px solid var(--au-border-default);
+  font-weight: var(--au-weight-medium);
+}
+
+.caption {
+  padding: var(--au-space-3);
+  font-size: var(--au-text-sm);
+  color: var(--au-text-muted);
+  caption-side: bottom;
+}
+
+/* Striped variant */
+.root[data-variant="striped"] .body .row:nth-child(even) {
+  background: var(--au-bg-surface);
+}
+
+.root[data-variant="striped"] .body .row:hover {
+  background: var(--au-bg-interactive);
+}
+
+/* Bordered variant */
+.root[data-variant="bordered"] .head,
+.root[data-variant="bordered"] .cell {
+  border: 1px solid var(--au-border-default);
+}
+
+@media (forced-colors: active) {
+  .root {
+    border: 1px solid LinkText;
+  }
+  .head,
+  .cell {
+    border: 1px solid LinkText;
+  }
+  .body .row:hover {
+    box-shadow: none;
+    outline: 2px solid LinkText;
+  }
+}
