@@ -99,4 +99,23 @@ describe("Accordion", () => {
     const { container } = renderAccordion({ className: "custom" });
     expect(container.firstChild).toHaveClass("custom");
   });
+
+  // Variants — Radix data-state
+  it("trigger has data-state closed by default", () => {
+    renderAccordion();
+    expect(screen.getByRole("button", { name: "Section 1" })).toHaveAttribute(
+      "data-state",
+      "closed"
+    );
+  });
+
+  it("trigger has data-state open when expanded", async () => {
+    const user = userEvent.setup();
+    renderAccordion();
+    await user.click(screen.getByRole("button", { name: "Section 1" }));
+    expect(screen.getByRole("button", { name: "Section 1" })).toHaveAttribute(
+      "data-state",
+      "open"
+    );
+  });
 });

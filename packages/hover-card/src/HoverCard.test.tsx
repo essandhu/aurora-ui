@@ -94,4 +94,28 @@ describe("HoverCard", () => {
     const content = await screen.findByText("Card content");
     expect(content.closest("[data-variant]")).toHaveClass("custom");
   });
+
+  // States — controlled open
+  it("renders open when controlled with open prop", () => {
+    render(
+      <HoverCard open>
+        <HoverCard.Trigger asChild>
+          <a href="#">Hover me</a>
+        </HoverCard.Trigger>
+        <HoverCard.Content>
+          <p>Controlled content</p>
+        </HoverCard.Content>
+      </HoverCard>
+    );
+    expect(screen.getByText("Controlled content")).toBeInTheDocument();
+  });
+
+  it("calls onOpenChange when opened", async () => {
+    const user = userEvent.setup();
+    const onOpenChange = vi.fn();
+    renderHoverCard({ onOpenChange });
+    await user.hover(screen.getByText("Hover me"));
+    await screen.findByText("Card content");
+    expect(onOpenChange).toHaveBeenCalledWith(true);
+  });
 });

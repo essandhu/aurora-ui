@@ -75,4 +75,42 @@ describe("Tabs", () => {
     renderTabs({ className: "custom" });
     expect(screen.getByRole("tablist").closest("[class]")).toBeTruthy();
   });
+
+  // Variants
+  it("marks inactive tab as inactive", () => {
+    renderTabs();
+    expect(screen.getByRole("tab", { name: "Tab 2" })).toHaveAttribute(
+      "data-state",
+      "inactive"
+    );
+  });
+
+  // Escape hatch — subcomponents
+  it("merges custom className on trigger", () => {
+    render(
+      <Tabs defaultValue="tab1">
+        <Tabs.List aria-label="Test tabs">
+          <Tabs.Trigger value="tab1" className="custom">
+            Tab 1
+          </Tabs.Trigger>
+        </Tabs.List>
+        <Tabs.Content value="tab1">Content 1</Tabs.Content>
+      </Tabs>
+    );
+    expect(screen.getByRole("tab", { name: "Tab 1" })).toHaveClass("custom");
+  });
+
+  it("merges custom className on content", () => {
+    render(
+      <Tabs defaultValue="tab1">
+        <Tabs.List aria-label="Test tabs">
+          <Tabs.Trigger value="tab1">Tab 1</Tabs.Trigger>
+        </Tabs.List>
+        <Tabs.Content value="tab1" className="custom">
+          Content 1
+        </Tabs.Content>
+      </Tabs>
+    );
+    expect(screen.getByRole("tabpanel")).toHaveClass("custom");
+  });
 });

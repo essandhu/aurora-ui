@@ -147,4 +147,29 @@ describe("Select", () => {
     await user.click(screen.getByRole("combobox"));
     expect(screen.getByText("Fruits")).toBeInTheDocument();
   });
+
+  // Variants — Radix data-state on items
+  it("selected item has data-state checked", async () => {
+    const user = userEvent.setup();
+    renderSelect();
+    await user.click(screen.getByRole("combobox"));
+    await user.click(screen.getByRole("option", { name: "Apple" }));
+    await user.click(screen.getByRole("combobox"));
+    expect(screen.getByRole("option", { name: "Apple" })).toHaveAttribute(
+      "data-state",
+      "checked"
+    );
+  });
+
+  it("unselected item has data-state unchecked", async () => {
+    const user = userEvent.setup();
+    renderSelect();
+    await user.click(screen.getByRole("combobox"));
+    await user.click(screen.getByRole("option", { name: "Apple" }));
+    await user.click(screen.getByRole("combobox"));
+    expect(screen.getByRole("option", { name: "Banana" })).toHaveAttribute(
+      "data-state",
+      "unchecked"
+    );
+  });
 });
