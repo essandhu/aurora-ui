@@ -29,5 +29,13 @@
   { "path": "packages/hover-card/dist/esm/index.js", "limit": "20 KB" },
   { "path": "packages/toolbar/dist/esm/index.js", "limit": "10 KB" },
   { "path": "packages/navigation-menu/dist/esm/index.js", "limit": "15 KB" },
-  { "path": "packages/react/dist/esm/index.js", "limit": "100 KB" }
+  { "path": "packages/visually-hidden/dist/esm/index.js", "limit": "5 KB" },
+  { "path": "packages/aspect-ratio/dist/esm/index.js", "limit": "6 KB" },
+  { "path": "packages/sheet/dist/esm/index.js", "limit": "18 KB" },
+  { "path": "packages/form/dist/esm/index.js", "limit": "6 KB" },
+  { "path": "packages/alert/dist/esm/index.js", "limit": "5 KB" },
+  { "path": "packages/breadcrumb/dist/esm/index.js", "limit": "5 KB" },
+  { "path": "packages/table/dist/esm/index.js", "limit": "5 KB" },
+  { "path": "packages/command/dist/esm/index.js", "limit": "20 KB" },
+  { "path": "packages/react/dist/esm/index.js", "limit": "120 KB" }
 ]
