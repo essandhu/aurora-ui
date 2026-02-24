@@ -1,0 +1,60 @@
+.content {
+  padding: var(--au-space-4);
+  border-radius: var(--au-radius-lg);
+  background: var(--au-bg-elevated);
+  border: 1px solid var(--au-border-default);
+  color: var(--au-text-primary);
+  font-family: var(--au-font-sans);
+  font-size: var(--au-text-md);
+  box-shadow:
+    var(--au-glow-sm) var(--au-accent-glow),
+    0 16px 32px rgba(0, 0, 0, 0.4);
+  animation: popoverIn var(--au-transition-base) ease-out;
+  z-index: 50;
+}
+
+.content:focus-visible {
+  outline: none;
+}
+
+/* Glass variant */
+.content[data-variant="glass"] {
+  background: rgba(20, 15, 30, 0.8);
+  backdrop-filter: blur(var(--au-blur-surface));
+  border-color: var(--au-accent-glow);
+  box-shadow:
+    var(--au-glow-md) var(--au-accent-glow),
+    0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+.arrow {
+  fill: var(--au-bg-elevated);
+}
+
+.content[data-variant="glass"] .arrow {
+  fill: rgba(20, 15, 30, 0.8);
+}
+
+@keyframes popoverIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content {
+    animation: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .content {
+    border: 2px solid LinkText;
+    box-shadow: none;
+  }
+}

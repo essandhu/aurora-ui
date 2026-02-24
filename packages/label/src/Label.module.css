@@ -1,0 +1,38 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--au-space-1);
+  font-family: var(--au-font-sans);
+  font-weight: var(--au-weight-medium);
+  color: var(--au-text-primary);
+  cursor: default;
+  user-select: none;
+}
+
+.root[data-size="sm"] {
+  font-size: var(--au-text-sm);
+}
+
+.root[data-size="md"] {
+  font-size: var(--au-text-md);
+}
+
+.root[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.root[data-error] {
+  color: var(--au-error);
+}
+
+.asterisk {
+  color: var(--au-error);
+  text-shadow: var(--au-glow-xs) var(--au-error);
+}
+
+@media (forced-colors: active) {
+  .asterisk {
+    text-shadow: none;
+  }
+}

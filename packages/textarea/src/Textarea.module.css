@@ -1,0 +1,89 @@
+.root {
+  display: block;
+  width: 100%;
+  min-height: 80px;
+  border-radius: var(--au-radius-md);
+  font-family: var(--au-font-sans);
+  color: var(--au-text-primary);
+  resize: vertical;
+  transition:
+    border-color var(--au-transition-base),
+    box-shadow var(--au-transition-glow);
+}
+
+.root::placeholder { color: var(--au-text-muted); }
+
+.root[data-size="sm"] { padding: var(--au-space-2) var(--au-space-3); font-size: var(--au-text-sm); }
+.root[data-size="md"] { padding: var(--au-space-3) var(--au-space-4); font-size: var(--au-text-md); }
+.root[data-size="lg"] { padding: var(--au-space-4) var(--au-space-5); font-size: var(--au-text-lg); }
+
+/* Outline */
+.root[data-variant="outline"] {
+  background: transparent;
+  border: 1px solid var(--au-border-default);
+}
+
+.root[data-variant="outline"]:hover:not(:disabled) {
+  border-color: var(--au-border-strong);
+}
+
+.root[data-variant="outline"]:focus {
+  outline: none;
+  border-color: var(--au-accent);
+  box-shadow:
+    0 0 0 var(--au-ring-offset) var(--au-bg-base),
+    0 0 0 calc(var(--au-ring-offset) + var(--au-ring-width)) var(--au-accent),
+    var(--au-glow-sm) var(--au-accent-glow);
+}
+
+/* Filled */
+.root[data-variant="filled"] {
+  background: var(--au-bg-interactive);
+  border: 1px solid transparent;
+}
+
+.root[data-variant="filled"]:focus {
+  outline: none;
+  background: var(--au-bg-base);
+  border-color: var(--au-accent);
+  box-shadow: var(--au-glow-sm) var(--au-accent-glow);
+}
+
+/* Ghost */
+.root[data-variant="ghost"] {
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.root[data-variant="ghost"]:focus {
+  outline: none;
+  border-color: var(--au-accent);
+  box-shadow: var(--au-glow-sm) var(--au-accent-glow);
+}
+
+/* Error state */
+.root[data-error] {
+  border-color: var(--au-error);
+}
+
+.root[data-error]:focus {
+  box-shadow: var(--au-glow-sm) var(--au-error);
+}
+
+/* Auto resize */
+.root[data-autoresize] {
+  field-sizing: content;
+  resize: none;
+}
+
+.root:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (forced-colors: active) {
+  .root:focus {
+    outline: 2px solid LinkText;
+    box-shadow: none;
+  }
+}

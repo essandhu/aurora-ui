@@ -1,8 +1,12 @@
 :root, [data-aurora-theme] {
   /* Glow sizes */
+  --au-glow-xs: 0 0 4px;
   --au-glow-sm: 0 0 8px;
   --au-glow-md: 0 0 16px;
   --au-glow-lg: 0 0 32px;
+
+  /* Animation durations */
+  --au-shimmer-duration: 1.5s;
 
   /* Surface effects */
   --au-blur-surface: 12px;

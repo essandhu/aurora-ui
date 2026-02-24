@@ -1,0 +1,28 @@
+.root {
+  flex-shrink: 0;
+  background: var(--au-border-default);
+  transition: box-shadow var(--au-transition-glow);
+}
+
+.root[data-orientation="horizontal"] {
+  height: 1px;
+  width: 100%;
+}
+
+.root[data-orientation="vertical"] {
+  width: 1px;
+  height: 100%;
+}
+
+/* Glow variant */
+.root[data-variant="glow"] {
+  background: var(--au-accent-glow);
+  box-shadow: var(--au-glow-xs) var(--au-accent-glow);
+}
+
+@media (forced-colors: active) {
+  .root {
+    background: CanvasText;
+    box-shadow: none;
+  }
+}
