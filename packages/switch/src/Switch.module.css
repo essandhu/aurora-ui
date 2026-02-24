@@ -1,6 +1,9 @@
 .root {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
+  padding: 0;
+  margin: 0;
   border-radius: var(--au-radius-full);
   border: 2px solid var(--au-border-default);
   background: var(--au-bg-interactive);
